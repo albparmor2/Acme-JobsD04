@@ -28,6 +28,9 @@ master.menu.sign-out = Salir
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anónimo
+master.menu.anonymous.albertoFavoriteLink = Enlace favorito de Alberto
+master.menu.anonymous.marcoFavoriteLink = Enlace favorito de Marco
+master.menu.anonymous.emilioFavoriteLink = Enlace favorito de Emilio
 master.menu.anonymous.announcements = Anuncios
 master.menu.anonymous.company-record = Registro de compañias
 master.menu.anonymous.company-record-top = Registro de compañias top

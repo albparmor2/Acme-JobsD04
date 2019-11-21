@@ -72,8 +72,10 @@ public class ProviderRequestaCreateService implements AbstractCreateService<Prov
 		assert errors != null;
 
 		Requesta r = null;
+		Boolean correctFutureDate;
+		Calendar calendar;
 
-		if (errors.hasErrors("ticker")) {
+		if (!errors.hasErrors("ticker")) {
 			r = this.repository.existRequesta(entity.getTicker());
 			errors.state(request, r == null, "ticker", "provider.requesta.form.error.existRequest");
 		}
@@ -86,9 +88,9 @@ public class ProviderRequestaCreateService implements AbstractCreateService<Prov
 			errors.state(request, reward.getAmount() > 0, "reward", "acme.money.error.positive");
 			errors.state(request, reward.getCurrency().equals("€") || reward.getCurrency().equals("EUR"), "reward", "acme.money.error.currency");
 		}
-		Boolean correctFutureDate;
+
 		if (!errors.hasErrors("deadline")) {
-			Calendar calendar = new GregorianCalendar();
+			calendar = new GregorianCalendar();
 			correctFutureDate = entity.getDeadline().after(calendar.getTime());
 			errors.state(request, correctFutureDate, "deadline", "acme.date.error.futureDate");
 		}

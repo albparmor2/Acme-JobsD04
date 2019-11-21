@@ -9,6 +9,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
@@ -27,6 +28,7 @@ public class Challenge extends DomainEntity {
 	@NotBlank
 	private String				title;
 
+	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				deadline;
 

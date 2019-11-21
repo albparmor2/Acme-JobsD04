@@ -27,3 +27,5 @@ administrator.company-record.form.button.return = Return
 administrator.company-record.list.label.name = Name of the company
 administrator.company-record.list.label.sector = Sector
 administrator.company-record.list.label.stars = Stars
+
+acme.telephoneNumber.error.pattern = Phone number must adhere to the following pattern “+999 (9999) 999999”, where “+999” de-notes an optional international prefix in range “+1” up to “+999”, “(9999)” denotes an optional area code in range “(0)” up to “(9999)”, and “999999” denotes a local phone number with a minimum of six digits and a maximum of ten digits
