@@ -1,6 +1,8 @@
 
 package acme.features.administrator.dashboard;
 
+import java.util.Date;
+
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
@@ -18,39 +20,33 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	@Query("SELECT count(*) FROM InvestorRecord")
 	Integer getTotalInvestorRecords();
 
-	@Query("SELECT count(*) FROM Requesta WHERE deadline>= CURRENT_DATE")
-	Integer getActiveRequests();
+	@Query("SELECT count(*) FROM Requesta WHERE deadline>= ?1")
+	Integer getActiveRequests(Date d);
 
-	@Query("SELECT min(reward.amount) FROM Requesta WHERE deadline>= CURRENT_DATE")
-	Double getMinRewardRequesta();
+	@Query("SELECT min(reward.amount) FROM Requesta WHERE deadline>= ?1")
+	Double getMinRewardRequesta(Date d);
 
-	@Query("SELECT max(reward.amount) FROM Requesta WHERE deadline>= CURRENT_DATE")
-	Double getMaxRewardRequesta();
+	@Query("SELECT max(reward.amount) FROM Requesta WHERE deadline>= ?1")
+	Double getMaxRewardRequesta(Date d);
 
-	@Query("SELECT avg(reward.amount) FROM Requesta WHERE deadline>= CURRENT_DATE")
-	Double getAvgRewardRequesta();
+	@Query("SELECT avg(reward.amount) FROM Requesta WHERE deadline>= ?1")
+	Double getAvgRewardRequesta(Date d);
 
-	@Query("SELECT stddev(reward.amount) FROM Requesta WHERE deadline>= CURRENT_DATE")
-	Double getStandardRewardRequesta();
+	@Query("SELECT stddev(reward.amount) FROM Requesta WHERE deadline>= ?1")
+	Double getStandardRewardRequesta(Date d);
 
-	@Query("SELECT count(*) FROM Offer WHERE deadline>= CURRENT_DATE")
-	Integer getActiveOfferts();
+	@Query("SELECT count(*) FROM Offer WHERE deadline>= ?1")
+	Integer getActiveOfferts(Date d);
 
-	@Query("SELECT min(minReward.amount) FROM Offer WHERE deadline>= CURRENT_DATE")
-	Double getMinRewardOffer();
+	@Query("SELECT min(minReward.amount) FROM Offer WHERE deadline>= ?1")
+	Double getMinRewardOffer(Date d);
 
-	@Query("SELECT max(maxReward.amount) FROM Offer WHERE deadline>= CURRENT_DATE")
-	Double getMaxRewardOffer();
+	@Query("SELECT max(maxReward.amount) FROM Offer WHERE deadline>= ?1")
+	Double getMaxRewardOffer(Date d);
 
-	@Query("SELECT avg(minReward.amount) FROM Offer WHERE deadline>= CURRENT_DATE")
-	Double getAvgMinRewardOffer();
+	@Query("SELECT avg((max_reward_amount + min_reward_amount)/2) FROM Offer WHERE deadline>= ?1")
+	Double getAvgRewardOffer(Date d);
 
-	@Query("SELECT avg(maxReward.amount) FROM Offer WHERE deadline>= CURRENT_DATE")
-	Double getAvgMaxRewardOffer();
-
-	@Query("SELECT stddev(minReward.amount) FROM Offer WHERE deadline>= CURRENT_DATE")
-	Double getStandardMinRewardOffer();
-
-	@Query("SELECT stddev(maxReward.amount) FROM Offer WHERE deadline>= CURRENT_DATE")
-	Double getStandardMaxRewardOffer();
+	@Query("SELECT stddev((max_reward_amount + min_reward_amount)/2) FROM Offer WHERE deadline>= ?1")
+	Double getStandardRewardOffer(Date d);
 }

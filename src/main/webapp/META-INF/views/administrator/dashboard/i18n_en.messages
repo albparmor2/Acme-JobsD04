@@ -8,14 +8,14 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-administrator.dashboard.form.label.totalAnnouncements = Total number of announcements
-administrator.dashboard.form.label.totalCompanyRecords = Total number of company records
-administrator.dashboard.form.label.totalInvestorRecords = Total number of investor records
-administrator.dashboard.form.label.minRewardRequesta = Minimun reward of active requests
-administrator.dashboard.form.label.maxRewardRequesta = Maximun reward of active requests
-administrator.dashboard.form.label.averageRewardRequesta = Average of the rewards of active requests
-administrator.dashboard.form.label.standardRewardRequesta = Standard deviation of the rewards of active requests
-administrator.dashboard.form.label.minRewardOffer = Minimun reward of active offers
-administrator.dashboard.form.label.maxRewardOffer = Maximun reward of active offers
-administrator.dashboard.form.label.averageRewardOffer = Average of the rewards of active offers
-administrator.dashboard.form.label.standardRewardOffer = Standard deviation of the rewards of active offers
+administrator.dashboard.form.label.totalAnnouncements = Total number of announcements:
+administrator.dashboard.form.label.totalCompanyRecords = Total number of company records:
+administrator.dashboard.form.label.totalInvestorRecords = Total number of investor records:
+administrator.dashboard.form.label.minRewardRequesta = Minimun reward of active requests:
+administrator.dashboard.form.label.maxRewardRequesta = Maximun reward of active requests:
+administrator.dashboard.form.label.averageRewardRequesta = Average of the rewards of active requests:
+administrator.dashboard.form.label.standardRewardRequesta = Standard deviation of the rewards of active requests:
+administrator.dashboard.form.label.minRewardOffer = Minimun reward of active offers:
+administrator.dashboard.form.label.maxRewardOffer = Maximun reward of active offers:
+administrator.dashboard.form.label.averageRewardOffer = Average of the rewards of active offers:
+administrator.dashboard.form.label.standardRewardOffer = Standard deviation of the rewards of active offers:

@@ -146,6 +146,16 @@
 	<property name="ticker" value="OALBR-12345"/>
 </bean>
 
+<bean id="offer03" class="acme.entities.offers.Offer">
+	<property name="title" value="sample offer 03"/>
+	<property name="moment" value="2019/10/10 19:10"/>
+	<property name="deadline" value="2021/10/10 19:10"/>
+	<property name="text" value="this is a other very cool offer"/>
+	<property name="minReward" value="€500.00"/>
+	<property name="maxReward" value="€2000.00"/>
+	<property name="ticker" value="OCARS-12334"/>
+</bean>
+
 <!-- Investor Record -->
 
 <bean id="investorRecord01" class="acme.entities.investorRecords.InvestorRecord">
