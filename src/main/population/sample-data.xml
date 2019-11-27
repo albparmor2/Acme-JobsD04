@@ -47,6 +47,46 @@
    <property name="UserAccount" ref="employer1UserAccount"/>
 </bean>
 
+<!-- Mandatory duties -->
+<bean id="duty1" class="acme.entities.jobs.Duty">
+   <property name="title" value="Title example 1"/>
+   <property name="description" value="Description example 1"/>
+   <property name="percentage" value="51.5"/>
+</bean>
+
+<bean id="duty2" class="acme.entities.jobs.Duty">
+   <property name="title" value="Title example 2"/>
+   <property name="description" value="Description example 2"/>
+   <property name="percentage" value="52.5"/>
+</bean>
+
+<bean id="duty3" class="acme.entities.jobs.Duty">
+   <property name="title" value="Title example 3"/>
+   <property name="description" value="Description example 3"/>
+   <property name="percentage" value="53.5"/>
+</bean>
+
+<bean id="duty4" class="acme.entities.jobs.Duty">
+   <property name="title" value="Title example 4"/>
+   <property name="description" value="Description example 4"/>
+   <property name="percentage" value="54.5"/>
+</bean>
+
+<!-- Descriptors -->
+<bean id="descriptor1" class="acme.entities.jobs.Descriptor">
+   <property name="description" value="Example description"/>
+   <property name="mandatoryDuties">
+       <list> <ref bean="duty1"/> <ref bean="duty2"/></list>
+   </property>
+</bean>
+
+<bean id="descriptor2" class="acme.entities.jobs.Descriptor">
+   <property name="description" value="Example description"/>
+   <property name="mandatoryDuties">
+       <list> <ref bean="duty3"/> <ref bean="duty4"/></list>
+   </property>
+</bean>
+
 <!-- Jobs -->
 
 <bean name="job1" class="acme.entities.jobs.Job">
@@ -54,9 +94,9 @@
    <property name="title" value="Title 1"/>
    <property name="deadline" value="2030/12/11 23:59"/>
    <property name="salary" value="€ 15,000.98"/>
-   <property name="description" value="Lorem ipsum sit dolor amet."/>
    <property name="moreInfo" value="http://www.example.com"/>
    <property name="finalMode" value="true"/>
+   <property name="descriptor" ref="descriptor1"/>
    <property name="employer" ref="employer1Employer"/>
 </bean>
 
@@ -65,9 +105,9 @@
    <property name="title" value="Title 2"/>
    <property name="deadline" value="2030/12/11 23:59"/>
    <property name="salary" value="€ 20,000.00"/>
-   <property name="description" value="Lorem ipsum sit dolor amet."/>
    <property name="moreInfo" value="http://www.example.com"/>
    <property name="finalMode" value="true"/>
+   <property name="descriptor" ref="descriptor2"/>
    <property name="employer" ref="employer1Employer"/>
 </bean>
 
