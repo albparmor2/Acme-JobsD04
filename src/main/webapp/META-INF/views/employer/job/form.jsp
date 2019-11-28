@@ -21,7 +21,7 @@
 	<acme:form-moment code="employer.job.form.label.deadline" path="deadline"/>
 	<acme:form-money code="employer.job.form.label.salary" path="salary"/>
 	<acme:form-url code="employer.job.form.label.moreInfo" path="moreInfo"/>
-	
+	<acme:form-url code="employer.job.form.label.descriptor.description" path="descriptor.description"/>
 	
 	<acme:form-return code="employer.job.form.button.return"/>
 	
