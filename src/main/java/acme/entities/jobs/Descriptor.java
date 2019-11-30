@@ -1,7 +1,7 @@
 
 package acme.entities.jobs;
 
-import java.util.List;
+import java.util.Collection;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
@@ -21,13 +21,13 @@ public class Descriptor extends DomainEntity {
 	/**
 	 *
 	 */
-	private static final long	serialVersionUID	= 1L;
+	private static final long		serialVersionUID	= 1L;
 
 	@NotBlank
-	private String				description;
+	private String					description;
 
 	@NotEmpty
 	@OneToMany
-	private List<@Valid Duty>	mandatoryDuties;
+	private Collection<@Valid Duty>	mandatoryDuties;
 
 }

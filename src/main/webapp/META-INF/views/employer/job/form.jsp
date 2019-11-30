@@ -22,7 +22,9 @@
 	<acme:form-money code="employer.job.form.label.salary" path="salary"/>
 	<acme:form-url code="employer.job.form.label.moreInfo" path="moreInfo"/>
 	<acme:form-url code="employer.job.form.label.descriptor.description" path="descriptor.description"/>
-	
+		
+	<input type="button" onclick="javascript:window.location.replace('/acme-jobs/employer/duty/list?id=${id}')"/>
 	<acme:form-return code="employer.job.form.button.return"/>
 	
 </acme:form>
+
