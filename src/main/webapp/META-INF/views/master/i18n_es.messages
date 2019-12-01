@@ -63,6 +63,8 @@ master.menu.administrator.commercial-banner = Banners comerciales
 master.menu.administrator.commercial-banner.create = Crear banner comercial
 master.menu.administrator.non-commercial-banner = Banners no comerciales
 master.menu.administrator.non-commercial-banner.create = Crear banner no comercial
+master.menu.administrator.dashboard = Estadísticas
+master.menu.administrator.chart = Gráfica
 master.menu.administrator.shutdown = Parar el sistema
 
 # master.menu.provider ########################################################
