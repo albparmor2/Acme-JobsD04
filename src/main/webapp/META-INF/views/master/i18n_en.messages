@@ -64,6 +64,7 @@ master.menu.administrator.commercial-banner.create = Create commercial banner
 master.menu.administrator.non-commercial-banner = Non commercial banners
 master.menu.administrator.non-commercial-banner.create = Create non commercial banner
 master.menu.administrator.dashboard = Dashboard
+master.menu.administrator.chart = Chart
 master.menu.administrator.shutdown = Shut down
 
 # master.menu.provider ########################################################

@@ -14,29 +14,35 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <div>
-	<canvas id="canvas"></canvas>
+<acme:message code="administrator.chart.form.label.companyBySector"/>
+	<canvas id="numberOfCompaniesGroupedBySector"></canvas>
+</div>
+<br></br>
+<div>
+<acme:message code="administrator.chart.form.label.InvestorBySector"/>
+    <canvas id="numberOfInvestorGroupedBySector"></canvas>
 </div>
 
 <script type ="text/javascript">
- $(document).ready(function()){
+ $(document).ready(function(){
 	 var CanvasCompany = document.getElementById("numberOfCompaniesGroupedBySector");
-	 Chart.defaults.global.defaultFontFamily = "Lato";
-	 Chart.defaults.global.defaultFontSize = 18;
+	 Chart.defaults.global.defaultFontFamily = "Modeka";
+	 Chart.defaults.global.defaultFontSize = 15;
 	 
 	 var DataCompany = {
 			 labels : [
-				 <jstl:forEach items = "${numberOfCompaniesGroupedBySector}" var="items">
+				 <jstl:forEach items = "${numberOfCompaniesGroupedBySector}" var="item">
 				 "<jstl:out value= "${item[0]}" />" ,
 				 </jstl:forEach>
 			 ],
 			 datasets:[
 				 {
 					 data: [
-						 <jstl:forEach items= "${numberOfCompaniesGroupedBySector}" var="items">
-						 "<jstl:out value = "${item[1]}" />"
+						 <jstl:forEach items= "${numberOfCompaniesGroupedBySector}" var="item">
+						 "<jstl:out value = "${item[1]}" />" ,
 						 </jstl:forEach>
 					 ],
-					 backgroundColor :["red", "green", "blue", "purple", "magenta"]
+					 backgroundColor :["blue", "red", "yellow", "green", "purple"]
 				 }
 			 ]
 	 };
@@ -44,31 +50,33 @@
 		 type: 'pie',
 		 data: DataCompany
 	 });
-	 
+ });
+ 
+ $(document).ready(function(){
 	 var CanvasInvestor = document.getElementById("numberOfInvestorGroupedBySector");
-	 Chart.defaults.global.defaultFontFamily = "Lato";
-	 Chart.defaults.global.defaultFontSize = 18;
+	 Chart.defaults.global.defaultFontFamily = "Modeka";
+	 Chart.defaults.global.defaultFontSize = 15;
 	 
 	 var DataInvestor = {
-		 labels : [
-			 <jstl:forEach items = "${numberOfInvestorGroupedBySector}" var="items">
-			 "<jstl:out value= "${item[0]}" />" ,
-			 </jstl:forEach>
-		 ],
-		 datasets:[
-			 {
-				 data: [
-					 <jstl:forEach items= "${numberOfInvestorGroupedBySector}" var="items">
-					 "<jstl:out value = "${item[1]}" />"
-					 </jstl:forEach>
-				 ],
-				 backgroundColor :["red", "green", "blue", "purple", "magenta"]
-			 }
-		 ]
- };
+			 labels : [
+				 <jstl:forEach items = "${numberOfInvestorGroupedBySector}" var="item">
+				 "<jstl:out value= "${item[0]}" />" ,
+				 </jstl:forEach>
+			 ],
+			 datasets:[
+				 {
+					 data: [
+						 <jstl:forEach items= "${numberOfInvestorGroupedBySector}" var="item">
+						 "<jstl:out value = "${item[1]}" />" ,
+						 </jstl:forEach>
+					 ],
+					 backgroundColor :["blue", "red", "yellow", "green", "purple"]
+				 }
+			 ]
+	 };
 	 var pieChartInvestor = new Chart(CanvasInvestor, {
 		 type: 'pie',
 		 data: DataInvestor
 	 });
- };
+ });
 </script>
