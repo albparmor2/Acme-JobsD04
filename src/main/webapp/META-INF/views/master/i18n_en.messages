@@ -71,6 +71,7 @@ master.menu.provider = Provider
 master.menu.provider.requesta.create = Create request
 
 # master.menu.sponsor #########################################################
+master.menu.sponsor = Sponsor
 master.menu.sponsor.commercial-banner = Commercial banners
 master.menu.sponsor.non-commercial-banner = Non commercial banners
 
