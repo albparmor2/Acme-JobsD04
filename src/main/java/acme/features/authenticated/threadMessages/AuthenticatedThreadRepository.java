@@ -14,6 +14,6 @@ public interface AuthenticatedThreadRepository extends AbstractRepository {
 	@Query("select a from Thread a where a.id = ?1")
 	Thread findOneById(int id);
 
-	@Query("select a from Thread a")
+	@Query("select a from Thread a ")
 	Collection<Thread> findMany();
 }

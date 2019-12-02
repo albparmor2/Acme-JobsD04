@@ -250,7 +250,9 @@
  	<property name="messages">
  	<list> <ref bean="message01"/> <ref bean="message02"/></list>
  	</property>
- 	<property name="authenticated" ref="authenticated1Authenticated"/>
+ 	<property name="authenticated">
+ 	<list> <ref bean="authenticated1Authenticated"/></list>
+ 	</property>
 
  </bean> 
 

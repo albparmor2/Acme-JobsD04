@@ -29,7 +29,7 @@ public class AuthenticatedThreadShowService implements AbstractShowService<Authe
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "moment", "title", "users", "messages");
+		request.unbind(entity, model, "moment", "title", "messages");
 	}
 
 	@Override
