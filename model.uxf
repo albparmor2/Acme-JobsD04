@@ -524,7 +524,7 @@ Employer
       <x>630</x>
       <y>420</y>
       <w>280</w>
-      <h>105</h>
+      <h>91</h>
     </coordinates>
     <panel_attributes>Job
 --
@@ -532,7 +532,6 @@ Employer
 + title: String {NotBlank}
 + deadline: String {NotNull, Temporal(TIMESTAMP)} 
 + salary: Money {NotNull, Valid}
-+ description: String {NotBlank}
 + moreInfo: String {URL}
 + finalMode: boolean</panel_attributes>
     <additional_attributes/>
@@ -571,28 +570,28 @@ Registered by &gt;</panel_attributes>
     <coordinates>
       <x>679</x>
       <y>574</y>
-      <w>182</w>
+      <w>210</w>
       <h>49</h>
     </coordinates>
     <panel_attributes>Descriptor
 --
 + Description: String{NotBlank}
-+ mandatoryDuties: List&lt;Duty&gt;{NotNull}</panel_attributes>
++ mandatoryDuties: List&lt;Duty&gt;{NotNull, Valid}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>756</x>
-      <y>518</y>
+      <y>504</y>
       <w>77</w>
-      <h>70</h>
+      <h>84</h>
     </coordinates>
     <panel_attributes>lt=&lt;-x
 m1= 1
 m2= 1
 Describes &gt;</panel_attributes>
-    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -607,5 +606,75 @@ m1= 1..*
 m2= 1
 Contains &gt;</panel_attributes>
     <additional_attributes>40.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>588</x>
+      <y>203</y>
+      <w>203</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;270.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>770</x>
+      <y>301</y>
+      <w>203</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Auditor
+--
++ firm: String {NotBlank}
++ responsibilityStatement: String {NotBlank}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>952</x>
+      <y>357</y>
+      <w>91</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1= 1
+m2=0..*
+Writed by &gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>980</x>
+      <y>420</y>
+      <w>231</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>AuditRecord
+--
++ title: String {NotBlank}
++ finalMode: boolean
++ creation: String {NotNull, Temporal(TIMESTAMP)} 
++ body: String {NotBlank}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>903</x>
+      <y>441</y>
+      <w>91</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1= 1
+m2=0..*
+Regards &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;110.0;20.0</additional_attributes>
   </element>
 </diagram>

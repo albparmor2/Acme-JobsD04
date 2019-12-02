@@ -66,6 +66,11 @@
 		<acme:menu-option code="master.menu.consumer" access="hasRole('Consumer')">
       <acme:menu-suboption code="master.menu.consumer.offer.create" action="/consumer/offer/create"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.auditor" access="hasRole('Auditor')">
+      <acme:menu-suboption code="master.menu.auditor.audit-records" action="/auditor/audit-record/list-mine"/>
+      <acme:menu-suboption code="master.menu.auditor.other-audit-records" action="/auditor/audit-record/list-not-mine"/>
+		</acme:menu-option>
 	</acme:menu-left>
 
 	<acme:menu-right>
