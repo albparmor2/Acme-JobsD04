@@ -207,6 +207,7 @@
  	<property name="picture" value="Coca-Cola Picture"/>
  	<property name="slogan" value="Let's do it together"/>
  	<property name="url" value="https://www.cocacola.es/es/home/"/>
+ 	<property name="sponsor" ref="sponsor1sponsor"/>
  	<property name="creditCardNumber" value="4485715860868875"/>
  	<property name="holder" value="Marco Antonio Fernández González"/>
  	<property name="brand" value="Visa"/>
@@ -219,9 +220,45 @@
  	<property name="picture" value="Global Warning Picture"/>
  	<property name="slogan" value="We change our behavior or change our planet"/>
  	<property name="url" value="https://www.nationalgeographic.es/medio-ambiente/que-es-el-calentamiento-global"/>
+ 	<property name="sponsor" ref="sponsor1sponsor"/>
  	<property name="jingle" value="https://www.youtube.com/watch?v=kJQP7kiw5Fk"/>
  </bean>
  
+ 
+ <!-- Sponsor -->
+ 
+  <bean name="sponsor1UserAccount" class="acme.framework.entities.UserAccount">
+   <property name="username" value="sponsor1"/>
+   <property name="password" value="sponsor1"/>
+   <property name="enabled" value="true"/>
+   <property name="identity">
+       <bean class="acme.datatypes.UserIdentity">
+          <property name="name" value="sponsor"/>
+          <property name="surname" value="One"/>
+          <property name="email" value="sponsor1@acme.com"/>
+       </bean>
+   </property>
+   <property name="roles">
+       <list>
+          <ref bean="sponsor1sponsor"/>
+          <ref bean="sponsor1Authenticated"/>
+       </list>
+   </property>
+</bean>
+
+<bean name="sponsor1sponsor" class="acme.entities.roles.Sponsor">
+   <property name="company" value="sponsor 1, Inc."/>
+   <property name="creditCardNumber" value="4485715860868875"/>
+ 	<property name="holder" value="Marco Antonio Fernández González"/>
+ 	<property name="brand" value="Visa"/>
+ 	<property name="expirationDate" value="2020/06/08 14:00"/>
+ 	<property name="cvv" value="9537"/>
+   <property name="UserAccount" ref="sponsor1UserAccount"/>
+</bean>
+
+<bean name="sponsor1Authenticated" class="acme.framework.entities.Authenticated">
+   <property name="UserAccount" ref="sponsor1UserAccount"/>
+</bean>
  
   
 

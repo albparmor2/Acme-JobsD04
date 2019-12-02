@@ -70,6 +70,10 @@ master.menu.administrator.shutdown = Parar el sistema
 master.menu.provider = Proveedor
 master.menu.provider.requesta.create = Crear solicitud
 
+# master.menu.sponsor #########################################################
+master.menu.sponsor.commercial-banner = Banners comerciales
+master.menu.sponsor.non-commercial-banner = Banners no comerciales
+
 # master.menu.consumer ##########################################################
 
 master.menu.consumer = Consumidor
