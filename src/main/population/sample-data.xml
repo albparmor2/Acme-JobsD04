@@ -222,7 +222,61 @@
  	<property name="jingle" value="https://www.youtube.com/watch?v=kJQP7kiw5Fk"/>
  </bean>
  
+ <!-- Thread messages -->
  
-  
+ <!-- Messages -->
+ <bean id="message01" class="acme.entities.messageThread.Message">
+ 	<property name="title" value="mensaje de prueba"/>
+ 	<property name="moment" value="2018/10/10 19:10"/>
+ 	<property name="tags" value="hola, soy, un, tag"/>
+ 	<property name="body" value="probando"/>
+ 	<property name="authenticated" ref="authenticated1Authenticated"/>
+ </bean> 
+ 
+  <bean id="message02" class="acme.entities.messageThread.Message">
+ 	<property name="title" value="mensaje de prueba 2"/>
+ 	<property name="moment" value="2018/10/10 19:10"/>
+ 	<property name="tags" value="hola, soy, un, tag, 2"/>
+ 	<property name="body" value="probando otra vez"/>
+ 	<property name="authenticated" ref="authenticated1Authenticated"/>
+ </bean>  
+ 
+ <!-- Threads -->
+ 
+ <bean id="Thread01" class="acme.entities.messageThread.Thread">
+ 	<property name="title" value="cadena de prueba"/>
+ 	<property name="moment" value="2018/10/10 19:10"/>
+ 	<property name="users" value="authenticated"/>
+ 	<property name="messages">
+ 	<list> <ref bean="message01"/> <ref bean="message02"/></list>
+ 	</property>
+ 	<property name="authenticated" ref="authenticated1Authenticated"/>
+
+ </bean> 
+
+	<!-- authenticated -->
+	<bean name="authenticatedUserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="authenticated" />
+		<property name="password" value="authenticated" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="authenticated" />
+				<property name="surname" value="Acme.com" />
+				<property name="email" value="authenticated@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="authenticated1Authenticated" />
+			</list>
+		</property>
+	</bean>
+
+	
+	
+	<bean name="authenticated1Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="authenticatedUserAccount" />
+	</bean>
 
 </beans>
