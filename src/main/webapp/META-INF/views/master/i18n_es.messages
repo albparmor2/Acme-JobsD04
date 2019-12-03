@@ -45,6 +45,7 @@ master.menu.authenticated.investor-record = Registro de inversiones
 master.menu.authenticated.requestas = Solicitudes
 master.menu.authenticated.offers = Ofertas
 master.menu.authenticated.challenges = Retos
+master.menu.authenticated.jobs = Trabajos activos
 
 # master.menu.administrator ###################################################
 
@@ -63,6 +64,8 @@ master.menu.administrator.commercial-banner = Banners comerciales
 master.menu.administrator.commercial-banner.create = Crear banner comercial
 master.menu.administrator.non-commercial-banner = Banners no comerciales
 master.menu.administrator.non-commercial-banner.create = Crear banner no comercial
+master.menu.administrator.dashboard = Estadísticas
+master.menu.administrator.chart = Gráfica
 master.menu.administrator.shutdown = Parar el sistema
 
 # master.menu.provider ########################################################
@@ -74,6 +77,25 @@ master.menu.provider.requesta.create = Crear solicitud
 
 master.menu.consumer = Consumidor
 master.menu.consumer.offer.create = Crear oferta
+
+
+# master.menu.auditor ##########################################################
+
+master.menu.auditor = Auditor
+master.menu.auditor.jobs = Trabajos con registros de auditorías míos
+master.menu.auditor.other-jobs = Trabajos sin registros de auditorías míos
+
+# master.menu.employer ##########################################################
+
+master.menu.employer = Empresa
+master.menu.employer.job.list-mine = Mis trabajos
+master.menu.employer.application.list-mine = Lista de solicitudes de mis trabajos
+
+# master.menu.worker ##########################################################
+
+master.menu.worker = Trabajador
+master.menu.worker.application.list-mine = Lista de mis peticiones
+
 
 # master.menu.user-account ####################################################
 

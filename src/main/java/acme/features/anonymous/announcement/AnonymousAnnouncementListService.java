@@ -46,9 +46,11 @@ public class AnonymousAnnouncementListService implements AbstractListService<Ano
 		c.add(Calendar.MONTH, -1);
 		Date d = c.getTime();
 
+		Calendar c2 = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+		Date d2 = c2.getTime();
 		Collection<Announcement> result;
 
-		result = this.repository.findMany(d);
+		result = this.repository.findMany(d, d2);
 
 		return result;
 	}
