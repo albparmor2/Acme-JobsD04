@@ -35,6 +35,11 @@
        drop 
        foreign key FK_6cyha9f1wpj0dpbxrrjddrqed;
 
+
+    alter table `message` 
+       drop 
+       foreign key `FK3ny0h1379q528toyokq81noiu`;
+
     alter table `descriptor_duty` 
        drop 
        foreign key `FKhiabici2cdmnnc9lpx11eieag`;
@@ -59,9 +64,23 @@
        drop 
        foreign key FK_b1gwnjqm6ggy9yuiqm0o4rlmd;
 
+
+    alter table `thread` 
+       drop 
+       foreign key `FKkoj53cnb5t2fhfm33gb9bvff1`;
+
+    alter table `thread_message` 
+       drop 
+       foreign key `FKrjegm8cujrxgbce9n1b78xuyo`;
+
+    alter table `thread_message` 
+       drop 
+       foreign key `FKgjodhp3io8v829t92y1tdtb7u`;
+
     alter table `worker` 
        drop 
        foreign key FK_l5q1f33vs2drypmbdhpdgwfv3;
+
 
     drop table if exists `administrator`;
 
@@ -97,6 +116,8 @@
 
     drop table if exists `investor_record`;
 
+    drop table if exists `message`;
+
     drop table if exists `job`;
 
     drop table if exists `non_commercial_banner`;
@@ -108,6 +129,10 @@
     drop table if exists `requesta`;
 
     drop table if exists `shout`;
+
+    drop table if exists `thread`;
+
+    drop table if exists `thread_message`;
 
     drop table if exists `user_account`;
 
