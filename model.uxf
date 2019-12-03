@@ -154,12 +154,13 @@ bg=yellow</panel_attributes>
       <x>168</x>
       <y>196</y>
       <w>154</w>
-      <h>49</h>
+      <h>56</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
 CustomCommand
 --
-
++ LIST_MINE
++ LIST_NOT_MINE
 
 bg=orange</panel_attributes>
     <additional_attributes/>
@@ -652,15 +653,17 @@ Writed by &gt;</panel_attributes>
     <coordinates>
       <x>980</x>
       <y>420</y>
-      <w>231</w>
-      <h>70</h>
+      <w>238</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>AuditRecord
 --
 + title: String {NotBlank}
-+ finalMode: boolean
++ status: Status
 + creation: String {NotNull, Temporal(TIMESTAMP)} 
-+ body: String {NotBlank}</panel_attributes>
++ body: String {NotBlank}
++ / finalMode: boolean {Transient} 
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -676,5 +679,21 @@ m1= 1
 m2=0..*
 Regards &gt;</panel_attributes>
     <additional_attributes>10.0;20.0;110.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1232</x>
+      <y>420</y>
+      <w>98</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+BasicCommand
+--
++ Published
++ Draft
+</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>

@@ -78,8 +78,8 @@ master.menu.consumer.offer.create = Crear oferta
 # master.menu.auditor ##########################################################
 
 master.menu.auditor = Auditor
-master.menu.auditor.audit-records = Mis registros de auditorías
-master.menu.auditor.other-audit-records = Otros registros de auditorías
+master.menu.auditor.jobs = Trabajos con registros de auditorías míos
+master.menu.auditor.other-jobs = Trabajos sin registros de auditorías míos
 
 # master.menu.user-account ####################################################
 

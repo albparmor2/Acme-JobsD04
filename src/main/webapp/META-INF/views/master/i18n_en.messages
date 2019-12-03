@@ -78,8 +78,8 @@ master.menu.consumer.offer.create = Create offer
 # master.menu.auditor ##########################################################
 
 master.menu.auditor = Auditor
-master.menu.auditor.audit-records = My audit records
-master.menu.auditor.other-audit-records = Other audit records
+master.menu.auditor.jobs = Jobs with my audit records
+master.menu.auditor.other-jobs = Jobs without my audit records
 
 # master.menu.user-account ####################################################
 

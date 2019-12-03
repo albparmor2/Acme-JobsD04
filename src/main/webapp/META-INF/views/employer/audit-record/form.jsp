@@ -16,14 +16,11 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:form-textbox code="employer.job.form.label.reference" path="reference"/>
-	<acme:form-textbox code="employer.job.form.label.title" path="title"/>
-	<acme:form-moment code="employer.job.form.label.deadline" path="deadline"/>
-	<acme:form-money code="employer.job.form.label.salary" path="salary"/>
-	<acme:form-url code="employer.job.form.label.moreInfo" path="moreInfo"/>
-	<input type="button" onclick="javascript:window.location.replace('/acme-jobs/employer/audit-record/list?id=${id}')"/>
+	<acme:form-textbox code="employer.audit-record.form.label.title" path="title"/>
+	<acme:form-moment code="employer.audit-record.form.label.creation" path="creation"/>
+	<acme:form-textbox code="employer.audit-record.form.label.body" path="body"/>
+	<acme:form-textbox code="employer.audit-record.form.label.job.reference" path="job.reference"/>
 	
-	
-	<acme:form-return code="employer.job.form.button.return"/>
+	<acme:form-return code="employer.audit-record.form.button.return"/>
 	
 </acme:form>

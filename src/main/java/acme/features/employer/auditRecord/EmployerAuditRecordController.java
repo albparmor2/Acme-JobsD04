@@ -1,5 +1,5 @@
 
-package acme.features.auditor.auditRecord;
+package acme.features.employer.auditRecord;
 
 import javax.annotation.PostConstruct;
 
@@ -8,19 +8,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import acme.entities.auditRecords.AuditRecord;
-import acme.entities.roles.Auditor;
+import acme.entities.roles.Employer;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
 
 @Controller
-@RequestMapping("/auditor/audit-record/")
-public class AuditorAuditRecordController extends AbstractController<Auditor, AuditRecord> {
+@RequestMapping("/employer/audit-record/")
+public class EmployerAuditRecordController extends AbstractController<Employer, AuditRecord> {
 
 	@Autowired
-	private AuditorAuditRecordShowService	showService;
+	private EmployerAuditRecordShowService	showService;
 
 	@Autowired
-	private AuditorAuditRecordListService	listService;
+	private EmployerAuditRecordListService	listService;
 
 
 	@PostConstruct

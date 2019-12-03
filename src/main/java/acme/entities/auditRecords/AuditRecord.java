@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -28,7 +29,8 @@ public class AuditRecord extends DomainEntity {
 	@NotBlank
 	private String				title;
 
-	private boolean				finalMode;
+	@NotNull
+	private Status				status;
 
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
@@ -38,13 +40,24 @@ public class AuditRecord extends DomainEntity {
 	@NotBlank
 	private String				body;
 
-	@NotNull
-	@Valid
-	@ManyToOne(optional = false)
-	private Auditor				auditor;
+
+	@Transient
+	public boolean isFinalMode() {
+		boolean res = false;
+		if (this.status == Status.Published) {
+			res = true;
+		}
+		return res;
+	};
+
 
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	private Job					job;
+	private Auditor	auditor;
+
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	private Job		job;
 }
