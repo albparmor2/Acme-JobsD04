@@ -63,6 +63,8 @@ master.menu.administrator.commercial-banner = Banners comerciales
 master.menu.administrator.commercial-banner.create = Crear banner comercial
 master.menu.administrator.non-commercial-banner = Banners no comerciales
 master.menu.administrator.non-commercial-banner.create = Crear banner no comercial
+master.menu.administrator.dashboard = Estadísticas
+master.menu.administrator.chart = Gráfica
 master.menu.administrator.shutdown = Parar el sistema
 
 # master.menu.provider ########################################################
@@ -77,7 +79,8 @@ master.menu.consumer.offer.create = Crear oferta
 
 # master.menu.employer ##########################################################
 
-master.menu.employer = Empleado
+master.menu.employer = Empresa
+master.menu.employer.job = Trabajos
 master.menu.employer.application.list-mine = Lista de solicitudes de mis trabajos
 
 # master.menu.worker ##########################################################

@@ -9,6 +9,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -37,6 +38,9 @@ public class Job extends DomainEntity {
 	@Length(min = 5, max = 10)
 	private String				reference;
 
+	@NotNull
+	private Status				status;
+
 	@NotBlank
 	private String				title;
 
@@ -51,15 +55,24 @@ public class Job extends DomainEntity {
 	@URL
 	private String				moreInfo;
 
-	private boolean				finalMode;
+
+	@Transient
+	public boolean isFinalMode() {
+		boolean res = false;
+		if (this.status == Status.Published) {
+			res = true;
+		}
+		return res;
+	};
+
 
 	@NotNull
 	@Valid
 	@OneToOne(optional = false)
-	private Descriptor			descriptor;
+	private Descriptor	descriptor;
 
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	private Employer			employer;
+	private Employer	employer;
 }

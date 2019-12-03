@@ -55,6 +55,8 @@
 			<acme:menu-suboption code="master.menu.administrator.commercial-banner.create" action="/administrator/commercial-banner/create"/>
 			<acme:menu-suboption code="master.menu.administrator.non-commercial-banner" action="/administrator/non-commercial-banner/list"/>
 			<acme:menu-suboption code="master.menu.administrator.non-commercial-banner.create" action="/administrator/non-commercial-banner/create"/>
+			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/dashboard/show"/>
+			<acme:menu-suboption code="master.menu.administrator.chart" action="/administrator/chart/show"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shutdown" action="/master/shutdown"/>
 		</acme:menu-option>
@@ -68,6 +70,7 @@
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.employer" access="hasRole('Employer')">
+      <acme:menu-suboption code="master.menu.employer.job" action="/employer/job/list-mine"/>
       <acme:menu-suboption code="master.menu.employer.application.list-mine" action="/employer/application/list-mine"/>
 		</acme:menu-option>
 		
