@@ -10,11 +10,10 @@ import acme.entities.jobs.Job;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
-import acme.framework.entities.Principal;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AuthenticatedJobListMineService implements AbstractListService<Authenticated, Job> {
+public class AuthenticatedJobListService implements AbstractListService<Authenticated, Job> {
 
 	@Autowired
 	AuthenticatedJobRepository repository;
@@ -41,10 +40,8 @@ public class AuthenticatedJobListMineService implements AbstractListService<Auth
 		assert request != null;
 
 		Collection<Job> result;
-		Principal principal;
 
-		principal = request.getPrincipal();
-		result = this.repository.findManyByEmployerId(principal.getActiveRoleId());
+		result = this.repository.findActiveJobs();
 		return result;
 	}
 
