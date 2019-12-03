@@ -36,7 +36,9 @@
             <acme:menu-suboption code="master.menu.authenticated.investor-record" action="/authenticated/investor-record/list"/>
             <acme:menu-suboption code="master.menu.authenticated.requestas" action="/authenticated/requesta/list"/>
             <acme:menu-suboption code="master.menu.authenticated.offers" action="/authenticated/offer/list"/>
-            <acme:menu-suboption code="master.menu.authenticated.challenges" action="/authenticated/challenge/list"/> 
+            <acme:menu-suboption code="master.menu.authenticated.challenges" action="/authenticated/challenge/list"/>
+            <acme:menu-suboption code="master.menu.authenticated.jobs" action="/authenticated/job/list"/>
+            
         </acme:menu-option>
         
 
@@ -55,6 +57,8 @@
 			<acme:menu-suboption code="master.menu.administrator.commercial-banner.create" action="/administrator/commercial-banner/create"/>
 			<acme:menu-suboption code="master.menu.administrator.non-commercial-banner" action="/administrator/non-commercial-banner/list"/>
 			<acme:menu-suboption code="master.menu.administrator.non-commercial-banner.create" action="/administrator/non-commercial-banner/create"/>
+			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/dashboard/show"/>
+			<acme:menu-suboption code="master.menu.administrator.chart" action="/administrator/chart/show"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shutdown" action="/master/shutdown"/>
 		</acme:menu-option>
@@ -71,6 +75,22 @@
 		 <acme:menu-suboption code="master.menu.sponsor.commercial-banner" action="/sponsor/commercial-banner/list"/>
          <acme:menu-suboption code="master.menu.sponsor.non-commercial-banner" action="/sponsor/non-commercial-banner/list"/>
 		</acme:menu-option>
+
+		<acme:menu-option code="master.menu.auditor" access="hasRole('Auditor')">
+      <acme:menu-suboption code="master.menu.auditor.jobs" action="/auditor/job/list-mine"/>
+      <acme:menu-suboption code="master.menu.auditor.other-jobs" action="/auditor/job/list-not-mine"/>
+		</acme:menu-option>
+
+		<acme:menu-option code="master.menu.employer" access="hasRole('Employer')">
+      <acme:menu-suboption code="master.menu.employer.job.list-mine" action="/employer/job/list-mine"/>
+      <acme:menu-suboption code="master.menu.employer.application.list-mine" action="/employer/application/list-mine"/>
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.worker" access="hasRole('Worker')">
+      <acme:menu-suboption code="master.menu.worker.application.list-mine" action="/worker/application/list-mine"/>
+		</acme:menu-option>
+		
+
 	</acme:menu-left>
 
 	<acme:menu-right>

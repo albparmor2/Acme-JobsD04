@@ -45,6 +45,7 @@ master.menu.authenticated.investor-record = Investor records
 master.menu.authenticated.requestas = Requests
 master.menu.authenticated.offers = Offers
 master.menu.authenticated.challenges = Challenges
+master.menu.authenticated.jobs = Active jobs
 
 # master.menu.administrator ###################################################
 
@@ -63,6 +64,8 @@ master.menu.administrator.commercial-banner = Commercial banners
 master.menu.administrator.commercial-banner.create = Create commercial banner
 master.menu.administrator.non-commercial-banner = Non commercial banners
 master.menu.administrator.non-commercial-banner.create = Create non commercial banner
+master.menu.administrator.dashboard = Dashboard
+master.menu.administrator.chart = Chart
 master.menu.administrator.shutdown = Shut down
 
 # master.menu.provider ########################################################
@@ -79,6 +82,25 @@ master.menu.sponsor.non-commercial-banner = Non commercial banners
 
 master.menu.consumer = Consumer
 master.menu.consumer.offer.create = Create offer
+
+
+# master.menu.auditor ##########################################################
+
+master.menu.auditor = Auditor
+master.menu.auditor.jobs = Jobs with my audit records
+master.menu.auditor.other-jobs = Jobs without my audit records
+
+# master.menu.employer ##########################################################
+
+master.menu.employer = Employer
+master.menu.employer.job.list-mine = My jobs
+master.menu.employer.application.list-mine = List of applications of my jobs
+
+# master.menu.worker ##########################################################
+
+master.menu.worker = Worker
+master.menu.worker.application.list-mine = List of my applications
+
 
 # master.menu.user-account ####################################################
 
