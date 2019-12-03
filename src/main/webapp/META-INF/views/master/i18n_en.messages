@@ -45,6 +45,7 @@ master.menu.authenticated.investor-record = Investor records
 master.menu.authenticated.requestas = Requests
 master.menu.authenticated.offers = Offers
 master.menu.authenticated.challenges = Challenges
+master.menu.authenticated.jobs = Active jobs
 
 # master.menu.administrator ###################################################
 
