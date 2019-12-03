@@ -77,6 +77,11 @@ master.menu.provider.requesta.create = Create request
 master.menu.consumer = Consumer
 master.menu.consumer.offer.create = Create offer
 
+# master.menu.employer ##########################################################
+
+master.menu.employer = Employer
+master.menu.employer.job = Trabajos
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account
