@@ -41,6 +41,20 @@
         `user_account_id` integer,
         `firm` varchar(255),
         `responsibility_statement` varchar(255),
+      primary key (`id`)
+    ) engine=InnoDB;
+    
+    create table `application` (
+       `id` integer not null,
+        `version` integer not null,
+        `moment` datetime(6),
+        `qualifications` varchar(255),
+        `reference` varchar(255),
+        `skills` varchar(255),
+        `statement` varchar(255),
+        `status` integer,
+        `job_id` integer not null,
+        `worker_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -154,11 +168,11 @@
        `id` integer not null,
         `version` integer not null,
         `deadline` datetime(6),
-        `final_mode` bit not null,
         `more_info` varchar(255),
         `reference` varchar(255),
         `salary_amount` double precision,
         `salary_currency` varchar(255),
+        `status` integer,
         `title` varchar(255),
         `descriptor_id` integer not null,
         `employer_id` integer not null,
@@ -233,12 +247,24 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `worker` (
+       `id` integer not null,
+        `version` integer not null,
+        `user_account_id` integer,
+        `qualifications_record` varchar(255),
+        `skills_record` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `hibernate_sequence` (
        `next_val` bigint
     ) engine=InnoDB;
 
     insert into `hibernate_sequence` values ( 1 );
 create index IDXnhikaa2dj3la6o2o7e9vo01y0 on `announcement` (`moment`);
+
+    alter table `application` 
+       add constraint UK_ct7r18vvxl5g4c4k7aefpa4do unique (`reference`);
 create index IDXnr284tes3x8hnd3h716tmb3fr on `challenge` (`deadline`);
 
     alter table `descriptor_duty` 
@@ -273,6 +299,7 @@ create index IDX1e6yyalrv1ka0w3g229hjwy6o on `requesta` (`ticker`);
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
 
+
     alter table `audit_record` 
        add constraint `FKdcrrgv6rkfw2ruvdja56un4ji` 
        foreign key (`auditor_id`) 
@@ -287,6 +314,16 @@ create index IDX1e6yyalrv1ka0w3g229hjwy6o on `requesta` (`ticker`);
        add constraint FK_clqcq9lyspxdxcp6o4f3vkelj 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
+       
+    alter table `application` 
+       add constraint `FKoa6p4s2oyy7tf80xwc4r04vh6` 
+       foreign key (`job_id`) 
+       references `job` (`id`);
+
+    alter table `application` 
+       add constraint `FKmbjdoxi3o93agxosoate4sxbt` 
+       foreign key (`worker_id`) 
+       references `worker` (`id`);
 
     alter table `authenticated` 
        add constraint FK_h52w0f3wjoi68b63wv9vwon57 
@@ -325,5 +362,10 @@ create index IDX1e6yyalrv1ka0w3g229hjwy6o on `requesta` (`ticker`);
 
     alter table `provider` 
        add constraint FK_b1gwnjqm6ggy9yuiqm0o4rlmd 
+       foreign key (`user_account_id`) 
+       references `user_account` (`id`);
+
+    alter table `worker` 
+       add constraint FK_l5q1f33vs2drypmbdhpdgwfv3 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
