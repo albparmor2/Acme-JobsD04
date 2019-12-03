@@ -78,6 +78,13 @@ master.menu.provider.requesta.create = Create request
 master.menu.consumer = Consumer
 master.menu.consumer.offer.create = Create offer
 
+
+# master.menu.auditor ##########################################################
+
+master.menu.auditor = Auditor
+master.menu.auditor.jobs = Jobs with my audit records
+master.menu.auditor.other-jobs = Jobs without my audit records
+
 # master.menu.employer ##########################################################
 
 master.menu.employer = Employer
@@ -88,6 +95,7 @@ master.menu.employer.application.list-mine = List of applications of my jobs
 
 master.menu.worker = Worker
 master.menu.worker.application.list-mine = List of my applications
+
 
 # master.menu.user-account ####################################################
 

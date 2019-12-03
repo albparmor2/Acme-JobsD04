@@ -487,7 +487,82 @@
  	<property name="jingle" value="https://www.youtube.com/watch?v=kJQP7kiw5Fk"/>
  </bean>
  
- 
-  
+  <!-- Auditors -->
+<bean name="auditor1UserAccount" class="acme.framework.entities.UserAccount">
+   <property name="username" value="auditor1"/>
+   <property name="password" value="auditor1"/>
+   <property name="enabled" value="true"/>
+   <property name="identity">
+       <bean class="acme.datatypes.UserIdentity">
+          <property name="name" value="Auditor"/>
+          <property name="surname" value="One"/>
+          <property name="email" value="auditor1@acme.com"/>
+       </bean>
+   </property>
+   <property name="roles">
+       <list>
+          <ref bean="auditor1Auditor"/>
+          <ref bean="auditor1Authenticated"/>
+       </list>
+   </property>
+</bean>
 
+<bean name="auditor1Auditor" class="acme.entities.roles.Auditor">
+   <property name="firm" value="Auditor 1 Agency."/>
+   <property name="responsibilityStatement" value="I am responsible, when anyone, anywhere, reaches out for help, I want the hand of AA always to be there, and for that I am responsible."/>
+   <property name="UserAccount" ref="auditor1UserAccount"/>
+</bean>
+
+<bean name="auditor1Authenticated" class="acme.framework.entities.Authenticated">
+   <property name="UserAccount" ref="auditor1UserAccount"/>
+</bean>
+
+<bean name="auditor2UserAccount" class="acme.framework.entities.UserAccount">
+   <property name="username" value="auditor2"/>
+   <property name="password" value="auditor2"/>
+   <property name="enabled" value="true"/>
+   <property name="identity">
+       <bean class="acme.datatypes.UserIdentity">
+          <property name="name" value="Auditor"/>
+          <property name="surname" value="Two"/>
+          <property name="email" value="auditor2@acme.com"/>
+       </bean>
+   </property>
+   <property name="roles">
+       <list>
+          <ref bean="auditor2Auditor"/>
+          <ref bean="auditor2Authenticated"/>
+       </list>
+   </property>
+</bean>
+
+<bean name="auditor2Auditor" class="acme.entities.roles.Auditor">
+   <property name="firm" value="Auditor 2 Agency."/>
+   <property name="responsibilityStatement" value="I am responsible, when anyone, anywhere, reaches out for help, I want the hand of AA always to be there, and for that I am responsible."/>
+   <property name="UserAccount" ref="auditor2UserAccount"/>
+</bean>
+
+<bean name="auditor2Authenticated" class="acme.framework.entities.Authenticated">
+   <property name="UserAccount" ref="auditor2UserAccount"/>
+</bean>
+
+<!-- Audit records -->
+
+<bean name="auditRecord1" class="acme.entities.auditRecords.AuditRecord">
+   <property name="title" value="Audit record 1"/>
+   <property name="creation" value="2018/12/11 22:00"/>
+   <property name="body" value="This is an audit record for Job Title 1"/>
+   <property name="finalMode" value="true"/>
+   <property name="auditor" ref="auditor1Auditor"/>
+   <property name="job" ref="job1"/>
+</bean>
+
+<bean name="auditRecord2" class="acme.entities.auditRecords.AuditRecord">
+   <property name="title" value="Audit record 2"/>
+   <property name="creation" value="2019/01/10 13:30"/>
+   <property name="body" value="This is an audit record for Job Title 2"/>
+   <property name="finalMode" value="true"/>
+   <property name="auditor" ref="auditor2Auditor"/>
+   <property name="job" ref="job2"/>
+</bean>
 </beans>
