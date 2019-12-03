@@ -81,6 +81,12 @@ master.menu.consumer.offer.create = Create offer
 
 master.menu.employer = Employer
 master.menu.employer.job = Trabajos
+master.menu.employer.application.list-mine = List of applications of my jobs
+
+# master.menu.worker ##########################################################
+
+master.menu.worker = Worker
+master.menu.worker.application.list-mine = List of my applications
 
 # master.menu.user-account ####################################################
 
