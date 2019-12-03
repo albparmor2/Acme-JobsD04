@@ -1,7 +1,9 @@
 
 package acme.features.authenticated.job;
 
+import java.util.Calendar;
 import java.util.Collection;
+import java.util.GregorianCalendar;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,9 +41,11 @@ public class AuthenticatedJobListService implements AbstractListService<Authenti
 	public Collection<Job> findMany(final Request<Job> request) {
 		assert request != null;
 
+		Calendar calendar;
 		Collection<Job> result;
 
-		result = this.repository.findActiveJobs();
+		calendar = new GregorianCalendar();
+		result = this.repository.findActiveJobs(calendar.getTime());
 		return result;
 	}
 
