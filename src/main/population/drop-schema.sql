@@ -1,4 +1,5 @@
 
+
     alter table `administrator` 
        drop 
        foreign key FK_2a5vcjo3stlfcwadosjfq49l1;
@@ -34,6 +35,10 @@
     alter table `consumer` 
        drop 
        foreign key FK_6cyha9f1wpj0dpbxrrjddrqed;
+       
+       alter table `sponsor` 
+       drop 
+       foreign key FK_20xk0ev32hlg96kqynl6laie2;
 
 
     alter table `message` 
@@ -136,6 +141,8 @@
 
     drop table if exists `user_account`;
 
+    drop table if exists `sponsor`;
+    
     drop table if exists `worker`;
 
     drop table if exists `hibernate_sequence`;
