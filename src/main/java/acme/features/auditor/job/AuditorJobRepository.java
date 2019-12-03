@@ -19,7 +19,7 @@ public interface AuditorJobRepository extends AbstractRepository {
 	@Query("select a from AuditRecord a where a.auditor.id = ?1")
 	Collection<AuditRecord> findManyByAuditorId(int activeRoleId);
 
-	@Query("select a from AuditRecord a where a.auditor.id != ?1")
+	@Query("select a from AuditRecord a where a.status='Published' and a.auditor.id != ?1")
 	Collection<AuditRecord> findDifferentsByAuditorId(int activeRoleId);
 
 }

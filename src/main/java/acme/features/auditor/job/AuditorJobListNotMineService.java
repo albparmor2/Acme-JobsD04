@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.auditRecords.AuditRecord;
 import acme.entities.jobs.Job;
+import acme.entities.jobs.Status;
 import acme.entities.roles.Auditor;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -52,7 +53,7 @@ public class AuditorJobListNotMineService implements AbstractListService<Auditor
 		for (AuditRecord a : auditrecords) {
 			Job j;
 			j = a.getJob();
-			if (!result.contains(j)) {
+			if (!result.contains(j) && j.getStatus() == Status.Published) {
 				result.add(j);
 			}
 		}

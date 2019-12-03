@@ -17,6 +17,7 @@
 
 <acme:form>
 	<acme:form-textbox code="employer.audit-record.form.label.title" path="title"/>
+	<acme:form-textbox code="employer.audit-record.form.label.status" path="status"/>
 	<acme:form-moment code="employer.audit-record.form.label.creation" path="creation"/>
 	<acme:form-textbox code="employer.audit-record.form.label.body" path="body"/>
 	<acme:form-textbox code="employer.audit-record.form.label.job.reference" path="job.reference"/>

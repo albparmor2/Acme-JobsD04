@@ -44,7 +44,7 @@ public class EmployerAuditRecordShowService implements AbstractShowService<Emplo
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "creation", "body");
+		request.unbind(entity, model, "title", "creation", "body", "status");
 		request.unbind(entity, model, "finalMode", "job.reference");
 
 	}

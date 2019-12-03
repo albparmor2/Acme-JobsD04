@@ -1,21 +1,23 @@
 
-package acme.features.auditor.auditRecord;
+package acme.features.authenticated.auditRecord;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.auditRecords.AuditRecord;
 import acme.entities.roles.Auditor;
+import acme.entities.roles.Employer;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.entities.Authenticated;
 import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class AuditorAuditRecordShowService implements AbstractShowService<Auditor, AuditRecord> {
+public class AuthenticatedAuditRecordShowService implements AbstractShowService<Authenticated, AuditRecord> {
 
 	@Autowired
-	AuditorAuditRecordRepository repository;
+	AuthenticatedAuditRecordRepository repository;
 
 
 	@Override
@@ -32,7 +34,6 @@ public class AuditorAuditRecordShowService implements AbstractShowService<Audito
 		auditRecord = this.repository.findOneAuditRecordById(auditRecordId);
 		auditor = auditRecord.getAuditor();
 		principal = request.getPrincipal();
-
 		result = auditRecord.isFinalMode() || !auditRecord.isFinalMode() && auditor.getUserAccount().getId() == principal.getAccountId();
 
 		return result;

@@ -8,13 +8,13 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-auditor.audit-record.form.label.title = Título:
-auditor.audit-record.form.label.status = Estado:
-auditor.audit-record.form.label.creation = Creación:
-auditor.audit-record.form.label.body = Cuerpo:
-auditor.audit-record.form.label.job.reference = Referencia del trabajo:
+authenticated.audit-record.form.label.title = Título:
+authenticated.audit-record.form.label.status = Estado:
+authenticated.audit-record.form.label.creation = Creación:
+authenticated.audit-record.form.label.body = Cuerpo:
+authenticated.audit-record.form.label.job.reference = Referencia del trabajo:
 
-auditor.audit-record.form.button.return = Volver
+authenticated.audit-record.form.button.return = Volver
 
-auditor.audit-record.list.label.title = Título
-auditor.audit-record.list.label.creation = Creación
+authenticated.audit-record.list.label.title = Título
+authenticated.audit-record.list.label.creation = Creación

@@ -241,7 +241,7 @@
 
 <bean name="job1" class="acme.entities.jobs.Job">
    <property name="reference" value="EMP1-JOB1"/>
-   <property name="status" value="Draft"/>
+   <property name="status" value="Published"/>
    <property name="title" value="Title 1"/>
    <property name="deadline" value="2030/12/11 23:59"/>
    <property name="salary" value="€ 15,000.98"/>
@@ -550,18 +550,18 @@
 
 <bean name="auditRecord1" class="acme.entities.auditRecords.AuditRecord">
    <property name="title" value="Audit record 1"/>
+   <property name="status" value="Published"/>
    <property name="creation" value="2018/12/11 22:00"/>
    <property name="body" value="This is an audit record for Job Title 1"/>
-   <property name="finalMode" value="true"/>
    <property name="auditor" ref="auditor1Auditor"/>
    <property name="job" ref="job1"/>
 </bean>
 
 <bean name="auditRecord2" class="acme.entities.auditRecords.AuditRecord">
    <property name="title" value="Audit record 2"/>
+   <property name="status" value="Draft"/>
    <property name="creation" value="2019/01/10 13:30"/>
    <property name="body" value="This is an audit record for Job Title 2"/>
-   <property name="finalMode" value="true"/>
    <property name="auditor" ref="auditor2Auditor"/>
    <property name="job" ref="job2"/>
 </bean>

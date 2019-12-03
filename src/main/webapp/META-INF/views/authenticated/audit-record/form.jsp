@@ -16,12 +16,12 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:form-textbox code="auditor.audit-record.form.label.title" path="title"/>
-	<acme:form-textbox code="auditor.audit-record.form.label.status" path="status"/>
-	<acme:form-moment code="auditor.audit-record.form.label.creation" path="creation"/>
-	<acme:form-textbox code="auditor.audit-record.form.label.body" path="body"/>
-	<acme:form-textbox code="auditor.audit-record.form.label.job.reference" path="job.reference"/>
+	<acme:form-textbox code="authenticated.audit-record.form.label.title" path="title"/>
+	<acme:form-textbox code="authenticated.audit-record.form.label.status" path="status"/>
+	<acme:form-moment code="authenticated.audit-record.form.label.creation" path="creation"/>
+	<acme:form-textbox code="authenticated.audit-record.form.label.body" path="body"/>
+	<acme:form-textbox code="authenticated.audit-record.form.label.job.reference" path="job.reference"/>
 	
-	<acme:form-return code="auditor.audit-record.form.button.return"/>
+	<acme:form-return code="authenticated.audit-record.form.button.return"/>
 	
 </acme:form>
