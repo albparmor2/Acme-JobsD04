@@ -27,6 +27,9 @@
 	<acme:form-textbox code="administrator.dashboard.form.label.maxRewardOffer" path="maxRewardOffer"/>
 	<acme:form-textbox code="administrator.dashboard.form.label.averageRewardOffer" path="averageRewardOffer"/>
 	<acme:form-textbox code="administrator.dashboard.form.label.standardRewardOffer" path="standardRewardOffer"/>
+	<acme:form-textbox code="administrator.dashboard.form.label.averageJobsEmployer" path="averageJobsEmployer"/>
+	<acme:form-textbox code="administrator.dashboard.form.label.averageApplicationEmployer" path="averageApplicationEmployer"/>
+	<acme:form-textbox code="administrator.dashboard.form.label.averageApplicationWorker" path="averageApplicationWorker"/>
 	
 	<acme:form-return code="administrator.announcement.form.button.return"/>
 	

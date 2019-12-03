@@ -24,6 +24,8 @@
 	<acme:form-url code="authenticated.job.form.label.moreInfo" path="moreInfo"/>
 	<acme:form-textarea code="authenticated.job.form.label.descriptor.description" path="descriptor.description"/>
 	
+	<acme:form/>
+	
 	<input type="button" onclick="javascript:window.location.replace('/acme-jobs/authenticated/duty/list?id=${id}')"/>
 	<input type="button" onclick="javascript:window.location.replace('/acme-jobs/authenticated/audit-record/list?id=${id}')"/>
 	

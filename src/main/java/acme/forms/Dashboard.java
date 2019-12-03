@@ -26,5 +26,8 @@ public class Dashboard implements Serializable {
 	Double						maxRewardOffer;
 	Double						averageRewardOffer;
 	Double						standardRewardOffer;
+	Double						averageJobsEmployer;
+	Double						averageApplicationEmployer;
+	Double						averageApplicationWorker;
 
 }

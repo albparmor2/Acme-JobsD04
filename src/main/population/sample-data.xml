@@ -592,11 +592,10 @@
  <bean id="Thread01" class="acme.entities.messageThread.Thread">
  	<property name="title" value="cadena de prueba"/>
  	<property name="moment" value="2018/10/10 19:10"/>
- 	<property name="users" value="authenticated"/>
  	<property name="messages">
  	<list> <ref bean="message01"/> <ref bean="message02"/></list>
  	</property>
- 	<property name="authenticated">
+ 	<property name="users">
  	<list> <ref bean="authenticated1Authenticated"/></list>
  	</property>
 

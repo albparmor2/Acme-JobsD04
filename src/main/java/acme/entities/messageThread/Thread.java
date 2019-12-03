@@ -35,14 +35,11 @@ public class Thread extends DomainEntity {
 	@Past
 	private Date								moment;
 
-	@NotBlank
-	private String								users;
-
 	@NotEmpty
 	@OneToMany
 	private Collection<@Valid Message>			messages;
 
 	@NotEmpty
 	@OneToMany
-	private Collection<@Valid Authenticated>	authenticateds;
+	private Collection<@Valid Authenticated>	users;
 }

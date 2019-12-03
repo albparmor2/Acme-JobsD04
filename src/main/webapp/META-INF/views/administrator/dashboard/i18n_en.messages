@@ -19,3 +19,6 @@ administrator.dashboard.form.label.minRewardOffer = Minimun reward of active off
 administrator.dashboard.form.label.maxRewardOffer = Maximun reward of active offers:
 administrator.dashboard.form.label.averageRewardOffer = Average of the rewards of active offers:
 administrator.dashboard.form.label.standardRewardOffer = Standard deviation of the rewards of active offers:
+administrator.dashboard.form.label.averageJobsEmployer = Average number of jobs per employer:
+administrator.dashboard.form.label.averageApplicationEmployer = Average number of applications per employer:
+administrator.dashboard.form.label.averageApplicationWorker = Average number of applications per worker:
