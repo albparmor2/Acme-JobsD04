@@ -91,22 +91,22 @@
 
 <bean name="job1" class="acme.entities.jobs.Job">
    <property name="reference" value="EMP1-JOB1"/>
+   <property name="status" value="Draft"/>
    <property name="title" value="Title 1"/>
    <property name="deadline" value="2030/12/11 23:59"/>
    <property name="salary" value="€ 15,000.98"/>
    <property name="moreInfo" value="http://www.example.com"/>
-   <property name="finalMode" value="true"/>
    <property name="descriptor" ref="descriptor1"/>
    <property name="employer" ref="employer1Employer"/>
 </bean>
 
 <bean name="job2" class="acme.entities.jobs.Job">
    <property name="reference" value="EMP1-JOB2"/>
+   <property name="status" value="Published"/>
    <property name="title" value="Title 2"/>
    <property name="deadline" value="2030/12/11 23:59"/>
    <property name="salary" value="€ 20,000.00"/>
    <property name="moreInfo" value="http://www.example.com"/>
-   <property name="finalMode" value="true"/>
    <property name="descriptor" ref="descriptor2"/>
    <property name="employer" ref="employer1Employer"/>
 </bean>
