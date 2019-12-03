@@ -263,11 +263,11 @@
 
 <bean name="job3" class="acme.entities.jobs.Job">
    <property name="reference" value="EMP2-JOB3"/>
+   <property name="status" value="Published"/>
    <property name="title" value="Title 3"/>
    <property name="deadline" value="2030/12/11 23:59"/>
    <property name="salary" value="€ 20,000.00"/>
    <property name="moreInfo" value="http://www.example.com"/>
-   <property name="finalMode" value="true"/>
    <property name="descriptor" ref="descriptor3"/>
    <property name="employer" ref="employer2Employer"/>
 </bean>

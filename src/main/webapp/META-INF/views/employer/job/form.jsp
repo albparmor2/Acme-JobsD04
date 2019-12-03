@@ -26,6 +26,6 @@
 		
 	<input type="button" onclick="javascript:window.location.replace('/acme-jobs/employer/duty/list?id=${id}')"/>
 	<acme:form-return code="employer.job.form.button.return"/>
-	
+		
 </acme:form>
 
