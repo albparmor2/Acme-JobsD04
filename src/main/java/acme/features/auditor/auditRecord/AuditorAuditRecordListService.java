@@ -40,10 +40,13 @@ public class AuditorAuditRecordListService implements AbstractListService<Audito
 		assert request != null;
 
 		Collection<AuditRecord> result;
+		Collection<AuditRecord> result2;
 		Integer jobId;
 		jobId = request.getModel().getInteger("id");
 
-		result = this.repository.findManyByJobId(jobId);
+		result = this.repository.findManyByJobId(jobId, request.getPrincipal().getActiveRoleId());
+		result2 = this.repository.findMyArByJobId(jobId, request.getPrincipal().getActiveRoleId());
+		result.addAll(result2);
 		return result;
 	}
 
