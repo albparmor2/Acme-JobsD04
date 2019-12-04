@@ -41,7 +41,7 @@ public class SponsorNonCommercialBannerListService implements AbstractListServic
 
 		Collection<NonCommercialBanner> result;
 
-		result = this.repository.findManyAll();
+		result = this.repository.findManyBySponsorId(request.getPrincipal().getActiveRoleId());
 
 		return result;
 	}

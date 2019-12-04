@@ -41,7 +41,7 @@ public class SponsorCommercialBannerListService implements AbstractListService<S
 
 		Collection<CommercialBanner> result;
 
-		result = this.repository.findManyAll();
+		result = this.repository.findManyBySponsorId(request.getPrincipal().getActiveRoleId());
 
 		return result;
 	}
