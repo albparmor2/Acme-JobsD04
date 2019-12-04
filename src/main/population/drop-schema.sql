@@ -79,13 +79,9 @@
        drop 
        foreign key FK_20xk0ev32hlg96kqynl6laie2;
 
-    alter table `thread_authenticated` 
+    alter table `thread` 
        drop 
-       foreign key `FKkuamwlt147dsxim98bfhh4dsr`;
-
-    alter table `thread_authenticated` 
-       drop 
-       foreign key `FKjsja3s5mr66x5nxm9dd8kut3r`;
+       foreign key `FKkoj53cnb5t2fhfm33gb9bvff1`;
 
     alter table `worker` 
        drop 
@@ -142,8 +138,6 @@
     drop table if exists `sponsor`;
 
     drop table if exists `thread`;
-
-    drop table if exists `thread_authenticated`;
 
     drop table if exists `user_account`;
 

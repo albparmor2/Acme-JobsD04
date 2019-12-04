@@ -14,7 +14,7 @@ import acme.framework.entities.Principal;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AuthenticatedThreadListService implements AbstractListService<Authenticated, Thread> {
+public class AuthenticatedThreadListMineService implements AbstractListService<Authenticated, Thread> {
 
 	@Autowired
 	AuthenticatedThreadRepository repository;

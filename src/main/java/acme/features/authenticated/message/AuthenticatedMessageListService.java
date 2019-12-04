@@ -2,13 +2,11 @@
 package acme.features.authenticated.message;
 
 import java.util.Collection;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.messageThread.Message;
-import acme.entities.messageThread.Thread;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
@@ -26,17 +24,18 @@ public class AuthenticatedMessageListService implements AbstractListService<Auth
 	public boolean authorise(final Request<Message> request) {
 		assert request != null;
 
-		Thread thread = this.repository.findThreadByid(request.getModel().getInteger("id"));
-		List<Authenticated> lsaut = (List<Authenticated>) thread.getUsers();
-		Principal principal = request.getPrincipal();
-		boolean res = false;
-		for (int i = 0; i < lsaut.size(); i++) {
-			if (lsaut.get(i).getUserAccount().getId() == principal.getAccountId()) {
-				res = true;
-				break;
-			}
-		}
-		return res;
+		boolean result;
+		int authenticatedId;
+		int authenticatedThreadId;
+		Principal principal;
+		Collection<Integer> usersId;
+
+		principal = request.getPrincipal();
+		authenticatedId = principal.getAccountId();
+		usersId = this.repository.findManyUsersId(request.getModel().getInteger("id"));
+		authenticatedThreadId = this.repository.findUserIdByid(request.getModel().getInteger("id"));
+		result = authenticatedThreadId == authenticatedId || usersId.contains(principal.getAccountId());
+		return result;
 	}
 
 	@Override

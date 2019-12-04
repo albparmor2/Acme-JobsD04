@@ -1,13 +1,12 @@
 
 package acme.features.authenticated.message;
 
-import java.util.List;
+import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.messageThread.Message;
-import acme.entities.messageThread.Thread;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
@@ -25,17 +24,20 @@ public class AuthenticatedMessageShowService implements AbstractShowService<Auth
 	public boolean authorise(final Request<Message> request) {
 		assert request != null;
 
-		Thread thread = this.repository.findThreadByid(request.getModel().getInteger("id"));
-		List<Authenticated> lsaut = (List<Authenticated>) thread.getUsers();
-		Principal principal = request.getPrincipal();
-		boolean res = false;
-		for (int i = 0; i < lsaut.size(); i++) {
-			if (lsaut.get(i).getUserAccount().getId() == principal.getAccountId()) {
-				res = true;
-				break;
-			}
-		}
-		return res;
+		boolean result;
+		int authenticatedId;
+		int threadId;
+		int authenticatedThreadId;
+		Principal principal;
+		Collection<Integer> usersId;
+
+		principal = request.getPrincipal();
+		authenticatedId = principal.getAccountId();
+		threadId = this.repository.findThreadId(request.getModel().getInteger("id"));
+		usersId = this.repository.findManyUsersId(threadId);
+		authenticatedThreadId = this.repository.findUserIdByid(threadId);
+		result = authenticatedThreadId == authenticatedId || usersId.contains(principal.getAccountId());
+		return result;
 	}
 
 	@Override
