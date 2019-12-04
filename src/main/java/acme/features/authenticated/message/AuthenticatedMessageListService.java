@@ -10,6 +10,7 @@ import acme.entities.messageThread.Message;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractListService;
 
 @Service
@@ -23,7 +24,18 @@ public class AuthenticatedMessageListService implements AbstractListService<Auth
 	public boolean authorise(final Request<Message> request) {
 		assert request != null;
 
-		return true;
+		boolean result;
+		int authenticatedId;
+		int authenticatedThreadId;
+		Principal principal;
+		Collection<Integer> usersId;
+
+		principal = request.getPrincipal();
+		authenticatedId = principal.getAccountId();
+		usersId = this.repository.findManyUsersId(request.getModel().getInteger("id"));
+		authenticatedThreadId = this.repository.findUserIdByid(request.getModel().getInteger("id"));
+		result = authenticatedThreadId == authenticatedId || usersId.contains(principal.getAccountId());
+		return result;
 	}
 
 	@Override
@@ -41,7 +53,7 @@ public class AuthenticatedMessageListService implements AbstractListService<Auth
 
 		Collection<Message> result;
 
-		result = this.repository.findMany();
+		result = this.repository.findMessagesByThreadId(request.getModel().getInteger("id"));
 
 		return result;
 	}

@@ -147,10 +147,6 @@
 
     drop table if exists `thread`;
 
-    drop table if exists `thread_authenticated`;
-
-    drop table if exists `thread_message`;
-
     drop table if exists `user_account`;
 
     drop table if exists `worker`;
