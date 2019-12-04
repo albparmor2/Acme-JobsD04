@@ -16,6 +16,6 @@ public interface AuthenticatedAnnouncementRepository extends AbstractRepository 
 	@Query("select a from Announcement a where a.id = ?1")
 	Announcement findOneById(int id);
 
-	@Query("select a from Announcement a where a.moment between ?1 and CURRENT_DATE")
-	Collection<Announcement> findMany(Date d);
+	@Query("select a from Announcement a where a.moment between ?1 and ?2")
+	Collection<Announcement> findMany(Date d, Date g);
 }

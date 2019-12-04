@@ -188,53 +188,49 @@
 <bean id="duty1" class="acme.entities.jobs.Duty">
    <property name="title" value="Title example 1"/>
    <property name="description" value="Description example 1"/>
-   <property name="percentage" value="51.5"/>
+   <property name="percentage" value="47.5"/>
+   <property name="descriptor" value="descriptor1"/>
 </bean>
 
 <bean id="duty2" class="acme.entities.jobs.Duty">
    <property name="title" value="Title example 2"/>
    <property name="description" value="Description example 2"/>
    <property name="percentage" value="52.5"/>
+   <property name="descriptor" value="descriptor1"/>
 </bean>
 
 <bean id="duty3" class="acme.entities.jobs.Duty">
    <property name="title" value="Title example 3"/>
    <property name="description" value="Description example 3"/>
    <property name="percentage" value="53.5"/>
+   <property name="descriptor" value="descriptor2"/>
 </bean>
 
 <bean id="duty4" class="acme.entities.jobs.Duty">
    <property name="title" value="Title example 4"/>
    <property name="description" value="Description example 4"/>
-   <property name="percentage" value="54.5"/>
+   <property name="percentage" value="46.5"/>
+   <property name="descriptor" value="descriptor2"/>
 </bean>
 
 <bean id="duty5" class="acme.entities.jobs.Duty">
    <property name="title" value="Title example 5"/>
    <property name="description" value="Description example 5"/>
-   <property name="percentage" value="55.5"/>
+   <property name="percentage" value="100"/>
+   <property name="descriptor" value="descriptor3"/>
 </bean>
 
 <!-- Descriptors -->
 <bean id="descriptor1" class="acme.entities.jobs.Descriptor">
    <property name="description" value="Example description"/>
-   <property name="mandatoryDuties">
-       <list> <ref bean="duty1"/> <ref bean="duty2"/></list>
-   </property>
 </bean>
 
 <bean id="descriptor2" class="acme.entities.jobs.Descriptor">
    <property name="description" value="Example description"/>
-   <property name="mandatoryDuties">
-       <list> <ref bean="duty3"/> <ref bean="duty4"/></list>
-   </property>
 </bean>
 
 <bean id="descriptor3" class="acme.entities.jobs.Descriptor">
    <property name="description" value="Example description"/>
-   <property name="mandatoryDuties">
-       <list> <ref bean="duty5"/></list>
-   </property>
 </bean>
 
 <!-- Jobs -->
@@ -480,6 +476,20 @@
    <property name="sponsor" ref="sponsor1sponsor"/>
  </bean>
  
+  <bean id="commercialBanner02" class="acme.entities.banners.CommercialBanner">
+ 	<property name="picture" value="Pepsi Picture"/>
+ 	<property name="slogan" value="For the love of it"/>
+ 	<property name="url" value="https://www.pepsi.com/en-us/"/>
+ 	<property name="creditCardNumber" value="7940315860869483"/>
+ 	<property name="holder" value="Alberto Parras Moreno"/>
+ 	<property name="brand" value="MasterCard"/>
+ 	<property name="expirationDate" value="2022/07/04 23:59"/>
+ 	<property name="cvv" value="915"/>
+   <property name="sponsor" ref="sponsor2sponsor"/>
+ </bean>
+ 
+ 
+ 
  <!-- Non commercial banners -->
   <bean id="nonCommercialBanner01" class="acme.entities.banners.NonCommercialBanner">
  	<property name="picture" value="Global Warning Picture"/>
@@ -567,6 +577,24 @@
    <property name="auditor" ref="auditor2Auditor"/>
    <property name="job" ref="job2"/>
 </bean>
+
+<bean name="auditRecord3" class="acme.entities.auditRecords.AuditRecord">
+   <property name="title" value="Audit record 3"/>
+   <property name="status" value="Draft"/>
+   <property name="creation" value="2018/12/11 22:00"/>
+   <property name="body" value="This is an audit record for Job Title 1"/>
+   <property name="auditor" ref="auditor1Auditor"/>
+   <property name="job" ref="job1"/>
+</bean>
+
+<bean name="auditRecord4" class="acme.entities.auditRecords.AuditRecord">
+   <property name="title" value="Audit record 4"/>
+   <property name="status" value="Published"/>
+   <property name="creation" value="2019/01/10 13:30"/>
+   <property name="body" value="This is an audit record for Job Title 2"/>
+   <property name="auditor" ref="auditor2Auditor"/>
+   <property name="job" ref="job2"/>
+</bean>
   
   <!-- Thread messages -->
  
@@ -576,6 +604,7 @@
  	<property name="moment" value="2018/10/10 19:10"/>
  	<property name="tags" value="hola, soy, un, tag"/>
  	<property name="body" value="probando"/>
+ 	<property name="thread" ref ="thread01"/>
  	<property name="authenticated" ref="authenticated1Authenticated"/>
  </bean> 
  
@@ -584,20 +613,66 @@
  	<property name="moment" value="2018/10/10 19:10"/>
  	<property name="tags" value="hola, soy, un, tag, 2"/>
  	<property name="body" value="probando otra vez"/>
+ 	<property name="thread" ref ="thread01"/>
  	<property name="authenticated" ref="authenticated1Authenticated"/>
  </bean>  
+ 
+   <bean id="message03" class="acme.entities.messageThread.Message">
+ 	<property name="title" value="mensaje de prueba 3"/>
+ 	<property name="moment" value="2018/10/10 19:10"/>
+ 	<property name="tags" value="hola, soy, un, tag, 3"/>
+ 	<property name="body" value="probando otra vez"/>
+ 	<property name="thread" ref ="thread02"/>
+ 	<property name="authenticated" ref="worker1Authenticated"/>
+ </bean> 
+ 
+   <bean id="message04" class="acme.entities.messageThread.Message">
+ 	<property name="title" value="mensaje de prueba 4"/>
+ 	<property name="moment" value="2018/10/10 19:10"/>
+ 	<property name="tags" value="hola, soy, un, tag, 4"/>
+ 	<property name="body" value="probando otra vez"/>
+ 	<property name="thread" ref ="thread02"/>
+ 	<property name="authenticated" ref="worker2Authenticated"/>
+ </bean> 
+ 
+   <bean id="message05" class="acme.entities.messageThread.Message">
+ 	<property name="title" value="mensaje de prueba 5"/>
+ 	<property name="moment" value="2018/10/10 19:10"/>
+ 	<property name="tags" value="hola, soy, un, tag, 5"/>
+ 	<property name="body" value="probando otra vez"/>
+ 	<property name="thread" ref ="thread03"/>
+ 	<property name="authenticated" ref="auditor1Authenticated"/>
+ </bean> 
+ 
+   <bean id="message06" class="acme.entities.messageThread.Message">
+ 	<property name="title" value="mensaje de prueba 6"/>
+ 	<property name="moment" value="2018/10/10 19:10"/>
+ 	<property name="tags" value="hola, soy, un, tag, 6"/>
+ 	<property name="body" value="probando otra vez"/>
+ 	<property name="thread" ref ="thread03"/>
+ 	<property name="authenticated" ref="auditor2Authenticated"/>
+ </bean> 
  
  <!-- Threads -->
  
  <bean id="Thread01" class="acme.entities.messageThread.Thread">
  	<property name="title" value="cadena de prueba"/>
  	<property name="moment" value="2018/10/10 19:10"/>
- 	<property name="messages">
- 	<list> <ref bean="message01"/> <ref bean="message02"/></list>
- 	</property>
- 	<property name="users">
- 	<list> <ref bean="authenticated1Authenticated"/></list>
- 	</property>
+ 	<property name="authenticated" ref="authenticated1Authenticated"/>
+ 	
+ </bean> 
+ 
+  <bean id="Thread02" class="acme.entities.messageThread.Thread">
+ 	<property name="title" value="cadena de prueba 2"/>
+ 	<property name="moment" value="2018/10/10 19:10"/>
+ 	<property name="authenticated" ref="sponsor2Authenticated"/>
+
+ </bean> 
+ 
+  <bean id="Thread03" class="acme.entities.messageThread.Thread">
+ 	<property name="title" value="cadena de prueba 3"/>
+ 	<property name="moment" value="2018/10/10 19:10"/>
+ 	<property name="authenticated" ref="sponsor1Authenticated"/>
 
  </bean> 
 
@@ -659,5 +734,38 @@
 
 <bean name="sponsor1Authenticated" class="acme.framework.entities.Authenticated">
    <property name="UserAccount" ref="sponsor1UserAccount"/>
+</bean>
+
+<bean name="sponsor2UserAccount" class="acme.framework.entities.UserAccount">
+   <property name="username" value="sponsor2"/>
+   <property name="password" value="sponsor2"/>
+   <property name="enabled" value="true"/>
+   <property name="identity">
+       <bean class="acme.datatypes.UserIdentity">
+          <property name="name" value="sponsor"/>
+          <property name="surname" value="Two"/>
+          <property name="email" value="sponsor2@acme.com"/>
+       </bean>
+   </property>
+   <property name="roles">
+       <list>
+          <ref bean="sponsor2sponsor"/>
+          <ref bean="sponsor2Authenticated"/>
+       </list>
+   </property>
+</bean>
+
+<bean name="sponsor2sponsor" class="acme.entities.roles.Sponsor">
+   <property name="company" value="sponsor 2, Inc."/>
+   <property name="creditCardNumber" value="7940315860869483"/>
+ 	<property name="holder" value="Alberto Parras Moreno"/>
+ 	<property name="brand" value="MasterCard"/>
+ 	<property name="expirationDate" value="2022/07/04 23:59"/>
+ 	<property name="cvv" value="915"/>
+   <property name="UserAccount" ref="sponsor2UserAccount"/>
+</bean>
+
+<bean name="sponsor2Authenticated" class="acme.framework.entities.Authenticated">
+   <property name="UserAccount" ref="sponsor2UserAccount"/>
 </bean>
 </beans>
