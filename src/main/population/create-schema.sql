@@ -11,7 +11,7 @@
         `version` integer not null,
         `moment` datetime(6),
         `more_info` varchar(255),
-        `text` varchar(255),
+        `text` varchar(1024),
         `title` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
@@ -27,9 +27,9 @@
        `id` integer not null,
         `version` integer not null,
         `moment` datetime(6),
-        `qualifications` varchar(255),
+        `qualifications` varchar(1024),
         `reference` varchar(255),
-        `skills` varchar(255),
+        `skills` varchar(1024),
         `statement` varchar(255),
         `status` integer,
         `job_id` integer not null,
@@ -40,7 +40,7 @@
     create table `audit_record` (
        `id` integer not null,
         `version` integer not null,
-        `body` varchar(255),
+        `body` varchar(1024),
         `creation` datetime(6),
         `status` integer,
         `title` varchar(255),
@@ -54,7 +54,7 @@
         `version` integer not null,
         `user_account_id` integer,
         `firm` varchar(255),
-        `responsibility_statement` varchar(255),
+        `responsibility_statement` varchar(1024),
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -68,12 +68,12 @@
     create table `challenge` (
        `id` integer not null,
         `version` integer not null,
-        `bronze_description` varchar(255),
+        `bronze_description` varchar(1024),
         `bronze_reward` varchar(255),
         `deadline` datetime(6),
-        `gold_description` varchar(255),
+        `gold_description` varchar(1024),
         `gold_reward` varchar(255),
-        `silver_description` varchar(255),
+        `silver_description` varchar(1024),
         `silver_reward` varchar(255),
         `title` varchar(255),
         primary key (`id`)
@@ -128,7 +128,7 @@
     create table `descriptor` (
        `id` integer not null,
         `version` integer not null,
-        `description` varchar(255),
+        `description` varchar(1024),
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -140,7 +140,7 @@
     create table `duty` (
        `id` integer not null,
         `version` integer not null,
-        `description` varchar(255),
+        `description` varchar(1024),
         `percentage` double precision,
         `title` varchar(255),
         primary key (`id`)
@@ -158,7 +158,7 @@
     create table `investor_record` (
        `id` integer not null,
         `version` integer not null,
-        `investing_statement` varchar(255),
+        `investing_statement` varchar(1024),
         `name` varchar(255),
         `sector` varchar(255),
         `stars` integer,
@@ -183,7 +183,7 @@
     create table `message` (
        `id` integer not null,
         `version` integer not null,
-        `body` varchar(255),
+        `body` varchar(1024),
         `moment` datetime(6),
         `tags` varchar(255),
         `title` varchar(255),
@@ -211,7 +211,7 @@
         `min_reward_amount` double precision,
         `min_reward_currency` varchar(255),
         `moment` datetime(6),
-        `text` varchar(255),
+        `text` varchar(1024),
         `ticker` varchar(255),
         `title` varchar(255),
         primary key (`id`)
@@ -230,7 +230,7 @@
        `id` integer not null,
         `version` integer not null,
         `deadline` datetime(6),
-        `description` varchar(255),
+        `description` varchar(1024),
         `moment` datetime(6),
         `reward_amount` double precision,
         `reward_currency` varchar(255),
@@ -244,7 +244,7 @@
         `version` integer not null,
         `author` varchar(255),
         `moment` datetime(6),
-        `text` varchar(255),
+        `text` varchar(1024),
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -295,8 +295,8 @@
        `id` integer not null,
         `version` integer not null,
         `user_account_id` integer,
-        `qualifications_record` varchar(255),
-        `skills_record` varchar(255),
+        `qualifications_record` varchar(1024),
+        `skills_record` varchar(1024),
         primary key (`id`)
     ) engine=InnoDB;
 
