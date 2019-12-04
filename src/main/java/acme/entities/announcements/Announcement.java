@@ -3,6 +3,7 @@ package acme.entities.announcements;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Index;
 import javax.persistence.Table;
@@ -37,6 +38,7 @@ public class Announcement extends DomainEntity {
 	@URL
 	private String				moreInfo;
 
+	@Column(length = 1024)
 	@NotBlank
 	private String				text;
 

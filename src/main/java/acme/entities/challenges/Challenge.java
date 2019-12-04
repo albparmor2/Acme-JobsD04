@@ -3,6 +3,7 @@ package acme.entities.challenges;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Index;
 import javax.persistence.Table;
@@ -35,18 +36,21 @@ public class Challenge extends DomainEntity {
 	@NotBlank
 	private String				bronzeReward;
 
+	@Column(length = 1024)
 	@NotBlank
 	private String				bronzeDescription;
 
 	@NotBlank
 	private String				silverReward;
 
+	@Column(length = 1024)
 	@NotBlank
 	private String				silverDescription;
 
 	@NotBlank
 	private String				goldReward;
 
+	@Column(length = 1024)
 	@NotBlank
 	private String				goldDescription;
 

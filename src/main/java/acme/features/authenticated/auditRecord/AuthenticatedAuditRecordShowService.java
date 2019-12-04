@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.auditRecords.AuditRecord;
 import acme.entities.roles.Auditor;
-import acme.entities.roles.Employer;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
@@ -46,7 +45,7 @@ public class AuthenticatedAuditRecordShowService implements AbstractShowService<
 		assert model != null;
 
 		request.unbind(entity, model, "title", "creation", "body", "status");
-		request.unbind(entity, model, "finalMode", "job.reference");
+		request.unbind(entity, model, "finalMode", "job.reference", "job.title");
 
 	}
 
