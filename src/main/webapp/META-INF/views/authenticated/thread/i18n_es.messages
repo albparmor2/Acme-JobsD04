@@ -10,9 +10,9 @@
 
 authenticated.thread.form.label.title = Titulo:
 authenticated.thread.form.label.moment = Momento:
-authenticated.thread.form.label.messages = Mensajes:
+authenticated.thread.form.label.users = Usuarios:
 
-authenticated.thread.form.button.return  = Volves
+authenticated.thread.form.button.return  = Volver
 
 authenticated.thread.list.label.moment = Momento
 authenticated.thread.list.label.title = Titulo

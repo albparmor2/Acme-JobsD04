@@ -4,6 +4,7 @@ package acme.features.authenticated.announcement;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.TimeZone;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,9 +47,11 @@ public class AuthenticatedAnnouncementListService implements AbstractListService
 		c.add(Calendar.MONTH, -1);
 		Date d = c.getTime();
 
+		Calendar calendar = new GregorianCalendar();
+
 		Collection<Announcement> result;
 
-		result = this.repository.findMany(d);
+		result = this.repository.findMany(d, calendar.getTime());
 
 		return result;
 	}

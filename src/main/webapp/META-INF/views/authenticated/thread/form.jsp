@@ -18,9 +18,11 @@
 <acme:form readonly="true">
 	<acme:form-textbox code="authenticated.thread.form.label.title" path="title"/>
 	<acme:form-moment code="authenticated.thread.form.label.moment" path="moment"/>
+	<acme:form-textbox code="authenticated.thread.form.label.users" path="users"/>
 	
 	
-	<input type="button" onclick="javascript:window.location.replace('/acme-jobs/authenticated/message/list?id=${id}')"/>
+	
+	<a href="/acme-jobs/authenticated/message/list?id=${id}"><acme:message code="authenticated.thread.form.label.messages"/></a>
 	<acme:form-return code="authenticated.thread.form.button.return"/>
 	
 	
