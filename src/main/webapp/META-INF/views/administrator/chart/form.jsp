@@ -22,6 +22,17 @@
 <acme:message code="administrator.chart.form.label.InvestorBySector"/>
     <canvas id="numberOfInvestorGroupedBySector"></canvas>
 </div>
+<br></br>
+<div>
+<acme:message code="administrator.chart.form.label.JobsByStatus"/>
+	<canvas id="ratioOfJobsGroupedByStatus"></canvas>
+</div>
+<br></br>
+<div>
+<acme:message code="administrator.chart.form.label.ApplicationsByStatus"/>
+    <canvas id="ratioOfApplicationsGroupedByStatus"></canvas>
+</div>
+
 
 <script type ="text/javascript">
  $(document).ready(function(){
@@ -71,6 +82,62 @@
 						 </jstl:forEach>
 					 ],
 					 backgroundColor :["blue", "red", "yellow", "green", "purple"]
+				 }
+			 ]
+	 };
+	 var pieChartInvestor = new Chart(CanvasInvestor, {
+		 type: 'pie',
+		 data: DataInvestor
+	 });
+ });
+ 
+ $(document).ready(function(){
+	 var CanvasInvestor = document.getElementById("ratioOfJobsGroupedByStatus");
+	 Chart.defaults.global.defaultFontFamily = "Modeka";
+	 Chart.defaults.global.defaultFontSize = 15;
+	 
+	 var DataInvestor = {
+			 labels : [
+				 <jstl:forEach items = "${ratioOfJobsGroupedByStatus}" var="item">
+				 "<jstl:out value= "${item[0]}" />" ,
+				 </jstl:forEach>
+			 ],
+			 datasets:[
+				 {
+					 data: [
+						 <jstl:forEach items= "${ratioOfJobsGroupedByStatus}" var="item">
+						 "<jstl:out value = "${item[1]}" />" ,
+						 </jstl:forEach>
+					 ],
+					 backgroundColor :["blue", "red", "green"]
+				 }
+			 ]
+	 };
+	 var pieChartInvestor = new Chart(CanvasInvestor, {
+		 type: 'pie',
+		 data: DataInvestor
+	 });
+ });
+ 
+ $(document).ready(function(){
+	 var CanvasInvestor = document.getElementById("ratioOfApplicationsGroupedByStatus");
+	 Chart.defaults.global.defaultFontFamily = "Modeka";
+	 Chart.defaults.global.defaultFontSize = 15;
+	 
+	 var DataInvestor = {
+			 labels : [
+				 <jstl:forEach items = "${ratioOfApplicationsGroupedByStatus}" var="item">
+				 "<jstl:out value= "${item[0]}" />" ,
+				 </jstl:forEach>
+			 ],
+			 datasets:[
+				 {
+					 data: [
+						 <jstl:forEach items= "${ratioOfApplicationsGroupedByStatus}" var="item">
+						 "<jstl:out value = "${item[1]}" />" ,
+						 </jstl:forEach>
+					 ],
+					 backgroundColor :["blue", "red", "green"]
 				 }
 			 ]
 	 };

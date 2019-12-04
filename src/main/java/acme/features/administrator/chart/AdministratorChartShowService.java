@@ -31,6 +31,7 @@ public class AdministratorChartShowService implements AbstractShowService<Admini
 		assert model != null;
 
 		request.unbind(entity, model, "numberOfCompaniesGroupedBySector", "numberOfInvestorGroupedBySector");
+		request.unbind(entity, model, "ratioOfJobsGroupedByStatus", "ratioOfApplicationsGroupedByStatus");
 	}
 
 	@Override
@@ -38,10 +39,14 @@ public class AdministratorChartShowService implements AbstractShowService<Admini
 		assert request != null;
 
 		Chart d = new Chart();
-		Object[] companies = this.repository.findCompanySector();
-		d.setNumberOfCompaniesGroupedBySector(companies);
-		Object[] investor = this.repository.findInvestorSector();
-		d.setNumberOfInvestorGroupedBySector(investor);
+		Object[] companiesBySector = this.repository.findCompanySector();
+		d.setNumberOfCompaniesGroupedBySector(companiesBySector);
+		Object[] investorsBySector = this.repository.findInvestorSector();
+		d.setNumberOfInvestorGroupedBySector(investorsBySector);
+		Object[] jobsByStatus = this.repository.findJobStatus();
+		d.setRatioOfJobsGroupedByStatus(jobsByStatus);
+		Object[] applicationsByStatus = this.repository.findApplicationStatus();
+		d.setRatioOfApplicationsGroupedByStatus(applicationsByStatus);
 
 		return d;
 	}

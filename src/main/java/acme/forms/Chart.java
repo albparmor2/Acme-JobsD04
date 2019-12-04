@@ -17,4 +17,6 @@ public class Chart implements Serializable {
 
 	Object[]					numberOfCompaniesGroupedBySector;
 	Object[]					numberOfInvestorGroupedBySector;
+	Object[]					ratioOfJobsGroupedByStatus;
+	Object[]					ratioOfApplicationsGroupedByStatus;
 }
