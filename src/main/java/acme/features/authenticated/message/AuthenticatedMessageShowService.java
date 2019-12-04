@@ -1,13 +1,17 @@
 
 package acme.features.authenticated.message;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.messageThread.Message;
+import acme.entities.messageThread.Thread;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 
 @Service
@@ -21,7 +25,17 @@ public class AuthenticatedMessageShowService implements AbstractShowService<Auth
 	public boolean authorise(final Request<Message> request) {
 		assert request != null;
 
-		return true;
+		Thread thread = this.repository.findThreadByid(request.getModel().getInteger("id"));
+		List<Authenticated> lsaut = (List<Authenticated>) thread.getUsers();
+		Principal principal = request.getPrincipal();
+		boolean res = false;
+		for (int i = 0; i < lsaut.size(); i++) {
+			if (lsaut.get(i).getUserAccount().getId() == principal.getAccountId()) {
+				res = true;
+				break;
+			}
+		}
+		return res;
 	}
 
 	@Override
@@ -39,7 +53,6 @@ public class AuthenticatedMessageShowService implements AbstractShowService<Auth
 
 		Message result;
 		int id;
-
 		id = request.getModel().getInteger("id");
 		result = this.repository.findOneById(id);
 

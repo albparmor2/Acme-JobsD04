@@ -1,5 +1,4 @@
 
-
     alter table `administrator` 
        drop 
        foreign key FK_2a5vcjo3stlfcwadosjfq49l1;
@@ -32,18 +31,13 @@
        drop 
        foreign key FK_h52w0f3wjoi68b63wv9vwon57;
 
+    alter table `commercial_banner` 
+       drop 
+       foreign key FK_q9id3wc65gg49afc5tlr1c00n;
+
     alter table `consumer` 
        drop 
        foreign key FK_6cyha9f1wpj0dpbxrrjddrqed;
-       
-       alter table `sponsor` 
-       drop 
-       foreign key FK_20xk0ev32hlg96kqynl6laie2;
-
-
-    alter table `message` 
-       drop 
-       foreign key `FK3ny0h1379q528toyokq81noiu`;
 
     alter table `descriptor_duty` 
        drop 
@@ -65,27 +59,37 @@
        drop 
        foreign key `FK3rxjf8uh6fh2u990pe8i2at0e`;
 
+    alter table `message` 
+       drop 
+       foreign key `FK3ny0h1379q528toyokq81noiu`;
+
+    alter table `message` 
+       drop 
+       foreign key `FK28hjkn063wrsjuiyyf8sm3s2v`;
+
+    alter table `non_commercial_banner` 
+       drop 
+       foreign key FK_2l8gpcwh19e7jj513or4r9dvb;
+
     alter table `provider` 
        drop 
        foreign key FK_b1gwnjqm6ggy9yuiqm0o4rlmd;
 
-
-    alter table `thread` 
+    alter table `sponsor` 
        drop 
-       foreign key `FKkoj53cnb5t2fhfm33gb9bvff1`;
+       foreign key FK_20xk0ev32hlg96kqynl6laie2;
 
-    alter table `thread_message` 
+    alter table `thread_authenticated` 
        drop 
-       foreign key `FKrjegm8cujrxgbce9n1b78xuyo`;
+       foreign key `FKkuamwlt147dsxim98bfhh4dsr`;
 
-    alter table `thread_message` 
+    alter table `thread_authenticated` 
        drop 
-       foreign key `FKgjodhp3io8v829t92y1tdtb7u`;
+       foreign key `FKjsja3s5mr66x5nxm9dd8kut3r`;
 
     alter table `worker` 
        drop 
        foreign key FK_l5q1f33vs2drypmbdhpdgwfv3;
-
 
     drop table if exists `administrator`;
 
@@ -121,9 +125,9 @@
 
     drop table if exists `investor_record`;
 
-    drop table if exists `message`;
-
     drop table if exists `job`;
+
+    drop table if exists `message`;
 
     drop table if exists `non_commercial_banner`;
 
@@ -135,14 +139,14 @@
 
     drop table if exists `shout`;
 
+    drop table if exists `sponsor`;
+
     drop table if exists `thread`;
 
-    drop table if exists `thread_message`;
+    drop table if exists `thread_authenticated`;
 
     drop table if exists `user_account`;
 
-    drop table if exists `sponsor`;
-    
     drop table if exists `worker`;
 
     drop table if exists `hibernate_sequence`;
