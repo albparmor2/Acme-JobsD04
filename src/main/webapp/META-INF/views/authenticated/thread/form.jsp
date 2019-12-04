@@ -23,6 +23,7 @@
 	
 	
 	<a href="/acme-jobs/authenticated/message/list?id=${id}"><acme:message code="authenticated.thread.form.label.messages"/></a>
+	<p></p>
 	<acme:form-return code="authenticated.thread.form.button.return"/>
 	
 	

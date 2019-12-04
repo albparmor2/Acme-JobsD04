@@ -6,7 +6,6 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.jobs.Descriptor;
 import acme.entities.jobs.Duty;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -41,10 +40,9 @@ public class AuthenticatedDutyListService implements AbstractListService<Authent
 		assert request != null;
 
 		Collection<Duty> result;
-		Descriptor descriptor;
 
-		descriptor = this.repository.findOneDescriptorByJobId(request.getModel().getInteger("id"));
-		result = this.repository.findDutiesbyDescriptorId(descriptor.getId());
+		result = this.repository.findDutiesByJobId(request.getModel().getInteger("id"));
+
 		return result;
 	}
 

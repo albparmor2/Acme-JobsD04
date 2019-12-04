@@ -36,7 +36,7 @@ public class Duty extends DomainEntity {
 	@Range(min = 0, max = 100)
 	private Double				percentage;
 
-	@NotEmpty
+	@NotNull
 	@ManyToOne(optional = false)
 	@Valid
 	private Descriptor			descriptor;

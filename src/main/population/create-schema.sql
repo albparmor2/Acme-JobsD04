@@ -1,5 +1,4 @@
 
-
     create table `administrator` (
        `id` integer not null,
         `version` integer not null,
@@ -12,7 +11,7 @@
         `version` integer not null,
         `moment` datetime(6),
         `more_info` varchar(255),
-        `text` varchar(255),
+        `text` varchar(1024),
         `title` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
@@ -28,10 +27,10 @@
        `id` integer not null,
         `version` integer not null,
         `moment` datetime(6),
-        `qualifications` varchar(255),
+        `qualifications` varchar(1024),
         `reference` varchar(255),
-        `skills` varchar(255),
-        `statement` varchar(255),
+        `skills` varchar(1024),
+        `statement` varchar(1024),
         `status` integer,
         `job_id` integer not null,
         `worker_id` integer not null,
@@ -41,7 +40,7 @@
     create table `audit_record` (
        `id` integer not null,
         `version` integer not null,
-        `body` varchar(255),
+        `body` varchar(1024),
         `creation` datetime(6),
         `status` integer,
         `title` varchar(255),
@@ -55,7 +54,7 @@
         `version` integer not null,
         `user_account_id` integer,
         `firm` varchar(255),
-        `responsibility_statement` varchar(255),
+        `responsibility_statement` varchar(1024),
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -69,12 +68,12 @@
     create table `challenge` (
        `id` integer not null,
         `version` integer not null,
-        `bronze_description` varchar(255),
+        `bronze_description` varchar(1024),
         `bronze_reward` varchar(255),
         `deadline` datetime(6),
-        `gold_description` varchar(255),
+        `gold_description` varchar(1024),
         `gold_reward` varchar(255),
-        `silver_description` varchar(255),
+        `silver_description` varchar(1024),
         `silver_reward` varchar(255),
         `title` varchar(255),
         primary key (`id`)
@@ -129,21 +128,17 @@
     create table `descriptor` (
        `id` integer not null,
         `version` integer not null,
-        `description` varchar(255),
+        `description` varchar(1024),
         primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `descriptor_duty` (
-       `descriptor_id` integer not null,
-        `mandatory_duties_id` integer not null
     ) engine=InnoDB;
 
     create table `duty` (
        `id` integer not null,
         `version` integer not null,
-        `description` varchar(255),
+        `description` varchar(1024),
         `percentage` double precision,
         `title` varchar(255),
+        `descriptor_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -159,7 +154,7 @@
     create table `investor_record` (
        `id` integer not null,
         `version` integer not null,
-        `investing_statement` varchar(255),
+        `investing_statement` varchar(1024),
         `name` varchar(255),
         `sector` varchar(255),
         `stars` integer,
@@ -184,11 +179,12 @@
     create table `message` (
        `id` integer not null,
         `version` integer not null,
-        `body` varchar(255),
+        `body` varchar(1024),
         `moment` datetime(6),
         `tags` varchar(255),
         `title` varchar(255),
         `authenticated_id` integer not null,
+        `thread_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -212,7 +208,7 @@
         `min_reward_amount` double precision,
         `min_reward_currency` varchar(255),
         `moment` datetime(6),
-        `text` varchar(255),
+        `text` varchar(1024),
         `ticker` varchar(255),
         `title` varchar(255),
         primary key (`id`)
@@ -231,7 +227,7 @@
        `id` integer not null,
         `version` integer not null,
         `deadline` datetime(6),
-        `description` varchar(255),
+        `description` varchar(1024),
         `moment` datetime(6),
         `reward_amount` double precision,
         `reward_currency` varchar(255),
@@ -245,7 +241,7 @@
         `version` integer not null,
         `author` varchar(255),
         `moment` datetime(6),
-        `text` varchar(255),
+        `text` varchar(1024),
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -267,17 +263,9 @@
         `version` integer not null,
         `moment` datetime(6),
         `title` varchar(255),
+        `users` varchar(255),
+        `authenticated_id` integer not null,
         primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `thread_authenticated` (
-       `thread_id` integer not null,
-        `users_id` integer not null
-    ) engine=InnoDB;
-
-    create table `thread_message` (
-       `thread_id` integer not null,
-        `messages_id` integer not null
     ) engine=InnoDB;
 
     create table `user_account` (
@@ -296,8 +284,8 @@
        `id` integer not null,
         `version` integer not null,
         `user_account_id` integer,
-        `qualifications_record` varchar(255),
-        `skills_record` varchar(255),
+        `qualifications_record` varchar(1024),
+        `skills_record` varchar(1024),
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -311,9 +299,6 @@ create index IDXnhikaa2dj3la6o2o7e9vo01y0 on `announcement` (`moment`);
     alter table `application` 
        add constraint UK_ct7r18vvxl5g4c4k7aefpa4do unique (`reference`);
 create index IDXnr284tes3x8hnd3h716tmb3fr on `challenge` (`deadline`);
-
-    alter table `descriptor_duty` 
-       add constraint UK_fchrbv687ftxg9nc0wx9vovh2 unique (`mandatory_duties_id`);
 
     alter table `job` 
        add constraint UK_qpodqtu8nvqkof3olnqnqcv2l unique (`descriptor_id`);
@@ -330,12 +315,6 @@ create index IDX1e6yyalrv1ka0w3g229hjwy6o on `requesta` (`ticker`);
 
     alter table `requesta` 
        add constraint UK_2pddgjoa29rjx79g4u9gusy73 unique (`ticker`);
-
-    alter table `thread_authenticated` 
-       add constraint UK_t69jud9gwiunbu3cx39uycwxb unique (`users_id`);
-
-    alter table `thread_message` 
-       add constraint UK_3jtjeexb82n6qyr77gcoqr4ck unique (`messages_id`);
 
     alter table `user_account` 
        add constraint UK_castjbvpeeus0r8lbpehiu0e4 unique (`username`);
@@ -390,13 +369,8 @@ create index IDX1e6yyalrv1ka0w3g229hjwy6o on `requesta` (`ticker`);
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
 
-    alter table `descriptor_duty` 
-       add constraint `FKhiabici2cdmnnc9lpx11eieag` 
-       foreign key (`mandatory_duties_id`) 
-       references `duty` (`id`);
-
-    alter table `descriptor_duty` 
-       add constraint `FKqitedkrksd2w8qyp1fp5eao9f` 
+    alter table `duty` 
+       add constraint `FK3cc3garl37bl7gswreqwr7pj4` 
        foreign key (`descriptor_id`) 
        references `descriptor` (`id`);
 
@@ -420,6 +394,11 @@ create index IDX1e6yyalrv1ka0w3g229hjwy6o on `requesta` (`ticker`);
        foreign key (`authenticated_id`) 
        references `authenticated` (`id`);
 
+    alter table `message` 
+       add constraint `FK28hjkn063wrsjuiyyf8sm3s2v` 
+       foreign key (`thread_id`) 
+       references `thread` (`id`);
+
     alter table `non_commercial_banner` 
        add constraint FK_2l8gpcwh19e7jj513or4r9dvb 
        foreign key (`sponsor_id`) 
@@ -435,25 +414,10 @@ create index IDX1e6yyalrv1ka0w3g229hjwy6o on `requesta` (`ticker`);
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
 
-    alter table `thread_authenticated` 
-       add constraint `FKkuamwlt147dsxim98bfhh4dsr` 
-       foreign key (`users_id`) 
+    alter table `thread` 
+       add constraint `FKkoj53cnb5t2fhfm33gb9bvff1` 
+       foreign key (`authenticated_id`) 
        references `authenticated` (`id`);
-
-    alter table `thread_authenticated` 
-       add constraint `FKjsja3s5mr66x5nxm9dd8kut3r` 
-       foreign key (`thread_id`) 
-       references `thread` (`id`);
-
-    alter table `thread_message` 
-       add constraint `FKrjegm8cujrxgbce9n1b78xuyo` 
-       foreign key (`messages_id`) 
-       references `message` (`id`);
-
-    alter table `thread_message` 
-       add constraint `FKgjodhp3io8v829t92y1tdtb7u` 
-       foreign key (`thread_id`) 
-       references `thread` (`id`);
 
     alter table `worker` 
        add constraint FK_l5q1f33vs2drypmbdhpdgwfv3 

@@ -13,6 +13,7 @@ auditor.audit-record.form.label.status = Estado:
 auditor.audit-record.form.label.creation = Creación:
 auditor.audit-record.form.label.body = Cuerpo:
 auditor.audit-record.form.label.job.reference = Referencia del trabajo:
+auditor.audit-record.form.label.job.title = Título del trabajo:
 
 auditor.audit-record.form.button.return = Volver
 
