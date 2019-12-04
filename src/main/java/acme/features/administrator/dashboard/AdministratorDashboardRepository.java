@@ -49,4 +49,16 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 
 	@Query("SELECT stddev((max_reward_amount + min_reward_amount)/2) FROM Offer WHERE deadline>= ?1")
 	Double getStandardRewardOffer(Date d);
+
+	@Query("SELECT count(*) From Job")
+	Double getJobs();
+
+	@Query("SELECT count(*) From Application")
+	Double getApplications();
+
+	@Query("SELECT count(*) From Employer")
+	Double getEmployers();
+
+	@Query("SELECT count(*) From Worker")
+	Double getWorkers();
 }

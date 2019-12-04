@@ -19,3 +19,6 @@ administrator.dashboard.form.label.minRewardOffer = Mínima recompensa de las of
 administrator.dashboard.form.label.maxRewardOffer = Máxima recompensa de las ofertas activas:
 administrator.dashboard.form.label.averageRewardOffer = Media de las recompensas de las ofertas activas:
 administrator.dashboard.form.label.standardRewardOffer = Desviación estándar de las recompensas de las ofertas activas:
+administrator.dashboard.form.label.averageJobsEmployer = Media de trabajos por empleador:
+administrator.dashboard.form.label.averageApplicationEmployer = Media de peticiones por empleador: 
+administrator.dashboard.form.label.averageApplicationWorker = Media de peticiones por trabajador:

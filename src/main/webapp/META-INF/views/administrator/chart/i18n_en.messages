@@ -9,4 +9,6 @@
 # they accept any liabilities with respect to them.
 
 administrator.chart.form.label.companyBySector = Companies grouped by sector:
-administrator.chart.form.label.InvestorBySector = Investor grouped by sector:
+administrator.chart.form.label.InvestorBySector = Investors grouped by sector:
+administrator.chart.form.label.JobsByStatus = Jobs grouped by status:
+administrator.chart.form.label.ApplicationsByStatus = Applications grouped by status:

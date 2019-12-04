@@ -33,7 +33,7 @@ public class Thread extends DomainEntity {
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
 	private Date				moment;
-
+  
 	private String				users;
 
 	@NotNull

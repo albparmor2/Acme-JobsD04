@@ -10,3 +10,5 @@
 
 administrator.chart.form.label.companyBySector = Compañías agrupadas por sector:
 administrator.chart.form.label.InvestorBySector = Inversiones agrupadas por sector:
+administrator.chart.form.label.JobsByStatus = Trabajos agrupados por estado:
+administrator.chart.form.label.ApplicationsByStatus = Aplicaciones agrupados por estado:

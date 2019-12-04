@@ -615,9 +615,7 @@
 			</list>
 		</property>
 	</bean>
-
-	
-	
+  
 	<bean name="authenticated1Authenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="authenticatedUserAccount" />
 	</bean>
