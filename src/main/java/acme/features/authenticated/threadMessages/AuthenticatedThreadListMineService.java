@@ -6,13 +6,15 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.messageThread.Thread;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AuthenticatedThreadListService implements AbstractListService<Authenticated, Thread> {
+public class AuthenticatedThreadListMineService implements AbstractListService<Authenticated, Thread> {
 
 	@Autowired
 	AuthenticatedThreadRepository repository;
@@ -40,7 +42,9 @@ public class AuthenticatedThreadListService implements AbstractListService<Authe
 
 		Collection<Thread> result;
 
-		result = this.repository.findMany();
+		Principal principal = request.getPrincipal();
+
+		result = this.repository.findManyByAuthenticatedId(principal.getActiveRoleId());
 
 		return result;
 	}
