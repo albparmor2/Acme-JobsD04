@@ -3,6 +3,7 @@ package acme.entities.shouts;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -23,6 +24,7 @@ public class Shout extends DomainEntity {
 	@NotBlank
 	private String				author;
 
+	@Column(length = 1024)
 	@NotBlank
 	private String				text;
 

@@ -23,11 +23,12 @@
 	<acme:form-money code="authenticated.job.form.label.salary" path="salary"/>
 	<acme:form-url code="authenticated.job.form.label.moreInfo" path="moreInfo"/>
 	<acme:form-textarea code="authenticated.job.form.label.descriptor.description" path="descriptor.description"/>
-	
 	<acme:form/>
 	
-	<input type="button" onclick="javascript:window.location.replace('/acme-jobs/authenticated/duty/list?id=${id}')"/>
-	<input type="button" onclick="javascript:window.location.replace('/acme-jobs/authenticated/audit-record/list?id=${id}')"/>
+	<a href=/acme-jobs/authenticated/duty/list?id=${id}><acme:message code="authenticated.job.form.label.duty"/><a/>
+	<p></p>
+	<a href=/acme-jobs/authenticated/audit-record/list?id=${id}><acme:message code="authenticated.job.form.label.auditRecord"/></a>
+	<p></p>
 	
 	<acme:form-return code="authenticated.job.form.button.return"/>
 	

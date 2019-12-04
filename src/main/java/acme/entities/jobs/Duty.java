@@ -1,6 +1,7 @@
 
 package acme.entities.jobs;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -24,6 +25,7 @@ public class Duty extends DomainEntity {
 	@NotBlank
 	private String				title;
 
+	@Column(length = 1024)
 	@NotBlank
 	private String				description;
 

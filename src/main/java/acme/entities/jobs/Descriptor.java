@@ -3,6 +3,7 @@ package acme.entities.jobs;
 
 import java.util.Collection;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.validation.Valid;
@@ -23,6 +24,7 @@ public class Descriptor extends DomainEntity {
 	 */
 	private static final long		serialVersionUID	= 1L;
 
+	@Column(length = 1024)
 	@NotBlank
 	private String					description;
 

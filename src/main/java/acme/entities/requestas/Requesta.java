@@ -40,6 +40,7 @@ public class Requesta extends DomainEntity {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				deadline;
 
+	@Column(length = 1024)
 	@NotBlank
 	private String				description;
 

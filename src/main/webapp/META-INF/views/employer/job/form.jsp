@@ -24,8 +24,11 @@
 	<acme:form-url code="employer.job.form.label.moreInfo" path="moreInfo"/>
 	<acme:form-url code="employer.job.form.label.descriptor.description" path="descriptor.description"/>
 		
-	<input type="button" onclick="javascript:window.location.replace('/acme-jobs/employer/duty/list?id=${id}')"/>
-  <input type="button" onclick="javascript:window.location.replace('/acme-jobs/employer/audit-record/list?id=${id}')"/>
+  
+  <a href=/acme-jobs/employer/duty/list?id=${id}><acme:message code="auditor.job.form.label.duty"/><a/>
+	<p></p>
+	<a href=/acme-jobs/employer/audit-record/list?id=${id}><acme:message code="auditor.job.form.label.auditRecord"/></a>
+	<p></p>
 
 	<acme:form-return code="employer.job.form.button.return"/>
 		

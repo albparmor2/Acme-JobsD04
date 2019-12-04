@@ -206,7 +206,7 @@
 <bean id="duty4" class="acme.entities.jobs.Duty">
    <property name="title" value="Title example 4"/>
    <property name="description" value="Description example 4"/>
-   <property name="percentage" value="54.5"/>
+   <property name="percentage" value="44.5"/>
 </bean>
 
 <bean id="duty5" class="acme.entities.jobs.Duty">

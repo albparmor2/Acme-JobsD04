@@ -1,6 +1,7 @@
 
 package acme.entities.investorRecords;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -26,6 +27,7 @@ public class InvestorRecord extends DomainEntity {
 	@NotBlank
 	private String				sector;
 
+	@Column(length = 1024)
 	@NotBlank
 	private String				investingStatement;
 

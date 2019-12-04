@@ -1,6 +1,7 @@
 
 package acme.entities.roles;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
 
@@ -18,6 +19,7 @@ public class Auditor extends UserRole {
 	@NotBlank
 	private String				firm;
 
+	@Column(length = 1024)
 	@NotBlank
 	private String				responsibilityStatement;
 
